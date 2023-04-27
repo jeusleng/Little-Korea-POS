@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SplashScreenLadera;
 
 namespace SplashScreen
 {
@@ -32,7 +33,7 @@ namespace SplashScreen
 
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form3());
+            openChildForm(new AccountManagement());
         }
 
 
@@ -69,7 +70,7 @@ namespace SplashScreen
 
         private void btnEqualizer_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form3());
+            openChildForm(new ProductsManagement());
             //..
             //your codes
             
@@ -118,7 +119,7 @@ namespace SplashScreen
             roleLabel.Text = role;
 
             // Retrieve the user's role from the database
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\source\\repos\\UserReg\\SplashScreen\\sampleDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\marka\\source\\repos\\ipt\\SplashScreen\\sampleDB.mdf;Integrated Security=True;Connect Timeout=30";
             string query = "SELECT role FROM usersTable WHERE username = @username";
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -144,6 +145,11 @@ namespace SplashScreen
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

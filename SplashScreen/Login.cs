@@ -19,7 +19,7 @@ namespace SplashScreen
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\sampleDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\marka\source\repos\ipt\SplashScreen\sampleDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void FrmMain_Load(object sender, EventArgs e)
         {

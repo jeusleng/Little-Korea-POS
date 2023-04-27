@@ -9,7 +9,7 @@ namespace SplashScreenLadera
 {
     class Connection
     {
-        private SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\sampleDB.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\marka\source\repos\ipt\SplashScreen\sampleDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         public SqlConnection getConnection()
         {
