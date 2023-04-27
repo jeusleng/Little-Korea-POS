@@ -14,12 +14,12 @@ namespace SplashScreen
 {
     public partial class FrmMain : Form
     {
+        Connection con = new Connection();
+
         public FrmMain()
         {
             InitializeComponent();
         }
-
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\marka\source\repos\ipt\SplashScreen\sampleDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -70,12 +70,12 @@ namespace SplashScreen
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
+                con.openConnection();
+                SqlCommand cmd = con.createCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into usersTable values('"+usernameField.Text+"', '"+passwordField.Text+"')";
                 cmd.ExecuteNonQuery();
-                con.Close();
+                con.closeConnection();
 
                 MessageBox.Show("Record inserted successfully!");
                 display_users();
@@ -119,22 +119,22 @@ namespace SplashScreen
             }
             else
             {
-                con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("select user_id from usersTable where user_id='"+idField.Text+"'", con);
+                con.openConnection();
+                SqlDataAdapter sda = new SqlDataAdapter("select user_id from usersTable where user_id='" + idField.Text + "'", con.getConnection());
                 DataSet ds = new DataSet();
                 sda.Fill(ds);
                 if(ds.Tables[0].Rows.Count != 0)
                 {
                     if (MessageBox.Show("Do you want to delete this user?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        SqlCommand cmd = new SqlCommand("delete from usersTable where user_id='"+idField.Text+"'", con);
+                        SqlCommand cmd = new SqlCommand("delete from usersTable where user_id='"+idField.Text+"'", con.getConnection());
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("User deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                     }
                 }
                 
-                con.Close();
+                con.closeConnection();
                 display_users();
             }
         }
@@ -148,8 +148,8 @@ namespace SplashScreen
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
+                con.openConnection();
+                SqlCommand cmd = con.createCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select * from usersTable";
                 cmd.ExecuteNonQuery();
@@ -158,7 +158,7 @@ namespace SplashScreen
                 SqlDataAdapter dataAdap = new SqlDataAdapter(cmd);
                 dataAdap.Fill(dataTbl);
                 gridView.DataSource = dataTbl;
-                con.Close();
+                con.closeConnection();
             }
             catch (Exception ex)
             {
@@ -201,20 +201,20 @@ namespace SplashScreen
             }
             else
             {
-                con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("select user_id from usersTable where user_id='" + idField.Text + "'", con);
+                con.openConnection();
+                SqlDataAdapter sda = new SqlDataAdapter("select user_id from usersTable where user_id='" + idField.Text + "'", con.getConnection());
                 DataSet ds = new DataSet();
                 sda.Fill(ds);
                 if (ds.Tables[0].Rows.Count != 0)
                 {
-                        SqlCommand cmd = new SqlCommand("update usersTable set username='"+usernameField.Text+"', password='"+passwordField.Text+"' where user_id='" + idField.Text + "'", con);
+                        SqlCommand cmd = new SqlCommand("update usersTable set username='"+usernameField.Text+"', password='"+passwordField.Text+"' where user_id='" + idField.Text + "'", con.getConnection());
                         cmd.ExecuteNonQuery();
                         
                         MessageBox.Show("User info updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                 }
 
-                con.Close();
+                con.closeConnection();
                 display_users();
             }
 
@@ -271,13 +271,13 @@ namespace SplashScreen
             }
             else
             {
-                con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("select count (*) from usersTable where username='" + usernameField.Text + "'", con);
+                con.openConnection();
+                SqlDataAdapter sda = new SqlDataAdapter("select count (*) from usersTable where username='" + usernameField.Text + "'", con.getConnection());
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-                    SqlDataAdapter sda2 = new SqlDataAdapter("select count (*) from usersTable where username='" + usernameField.Text + "' and password='" + passwordField.Text + "'", con);
+                    SqlDataAdapter sda2 = new SqlDataAdapter("select count (*) from usersTable where username='" + usernameField.Text + "' and password='" + passwordField.Text + "'", con.getConnection());
                     DataTable dt2 = new DataTable();
                     sda2.Fill(dt2);
                     if (dt2.Rows[0][0].ToString() == "1")
@@ -296,7 +296,7 @@ namespace SplashScreen
                     MessageBox.Show("Your username is incorrect.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                con.Close();
+                con.closeConnection();
             }
 
         }
@@ -331,12 +331,12 @@ namespace SplashScreen
 
         public void searching(String searchValue)
         {
-            con.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter("select username, password from usersTable where concat(username, password) LIKE '%"+searchBox.Text+"%'", con);
+            con.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter("select username, password from usersTable where concat(username, password) LIKE '%"+searchBox.Text+"%'", con.getConnection());
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             gridView.DataSource = dt;
-            con.Close();
+            con.closeConnection();
         }
         
         private void searchBox_TextChanged(object sender, EventArgs e)

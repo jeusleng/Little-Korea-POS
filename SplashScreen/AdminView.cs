@@ -17,6 +17,8 @@ namespace SplashScreen
         private string username;
         private string role;
 
+        Connection con = new Connection();
+
         public Form1(string username)
         {
             InitializeComponent();
@@ -115,19 +117,17 @@ namespace SplashScreen
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Start();
 
-            usernameLabel.Text = username;
-            roleLabel.Text = role;
-
             // Retrieve the user's role from the database
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\marka\\source\\repos\\ipt\\SplashScreen\\sampleDB.mdf;Integrated Security=True;Connect Timeout=30";
+            con.openConnection();
+
             string query = "SELECT role FROM usersTable WHERE username = @username";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@username", username);
-                connection.Open();
-                role = (string)command.ExecuteScalar();
-            }
+            SqlCommand cmd = con.createCommand();
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("@username", username);
+
+            string role = (string)cmd.ExecuteScalar();
+
+            con.closeConnection();
 
             // Display the username and role in the form
             usernameLabel.Text = username;
