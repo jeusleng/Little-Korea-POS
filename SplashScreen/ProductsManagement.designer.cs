@@ -44,9 +44,9 @@
             this.updateButton = new Guna.UI2.WinForms.Guna2Button();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.categoryLabel = new System.Windows.Forms.Label();
-            this.category = new Guna.UI2.WinForms.Guna2TextBox();
             this.productId = new Guna.UI2.WinForms.Guna2TextBox();
             this.productIdLabel = new System.Windows.Forms.Label();
+            this.categoryDropdown = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -344,35 +344,6 @@
             this.categoryLabel.Text = "Category";
             this.categoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // category
-            // 
-            this.category.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.category.BackColor = System.Drawing.Color.Transparent;
-            this.category.BorderColor = System.Drawing.Color.Maroon;
-            this.category.BorderRadius = 10;
-            this.category.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.category.DefaultText = "";
-            this.category.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.category.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.category.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.category.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.category.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.category.ForeColor = System.Drawing.Color.Firebrick;
-            this.category.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.category.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
-            this.category.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.category.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.category.Location = new System.Drawing.Point(109, 189);
-            this.category.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.category.Name = "category";
-            this.category.PasswordChar = '\0';
-            this.category.PlaceholderForeColor = System.Drawing.Color.Maroon;
-            this.category.PlaceholderText = "";
-            this.category.SelectedText = "";
-            this.category.Size = new System.Drawing.Size(149, 32);
-            this.category.TabIndex = 29;
-            // 
             // productId
             // 
             this.productId.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -420,6 +391,25 @@
             this.productIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productIdLabel.Visible = false;
             // 
+            // categoryDropdown
+            // 
+            this.categoryDropdown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.categoryDropdown.BackColor = System.Drawing.Color.Transparent;
+            this.categoryDropdown.BorderColor = System.Drawing.Color.Maroon;
+            this.categoryDropdown.BorderRadius = 10;
+            this.categoryDropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.categoryDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryDropdown.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.categoryDropdown.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.categoryDropdown.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.categoryDropdown.ForeColor = System.Drawing.Color.Firebrick;
+            this.categoryDropdown.ItemHeight = 30;
+            this.categoryDropdown.Location = new System.Drawing.Point(109, 189);
+            this.categoryDropdown.Name = "categoryDropdown";
+            this.categoryDropdown.Size = new System.Drawing.Size(149, 36);
+            this.categoryDropdown.TabIndex = 41;
+            this.categoryDropdown.SelectedIndexChanged += new System.EventHandler(this.categoryDropdown_SelectedIndexChanged);
+            // 
             // ProductsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +418,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(626, 473);
+            this.Controls.Add(this.categoryDropdown);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.productIdLabel);
@@ -436,7 +427,6 @@
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.stockLabel);
             this.Controls.Add(this.dataGridview);
-            this.Controls.Add(this.category);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.stock);
             this.Controls.Add(this.productPrice);
@@ -468,8 +458,8 @@
         private Guna.UI2.WinForms.Guna2Button updateButton;
         private Guna.UI2.WinForms.Guna2Button deleteButton;
         private System.Windows.Forms.Label categoryLabel;
-        private Guna.UI2.WinForms.Guna2TextBox category;
         private Guna.UI2.WinForms.Guna2TextBox productId;
         private System.Windows.Forms.Label productIdLabel;
+        private Guna.UI2.WinForms.Guna2ComboBox categoryDropdown;
     }
 }

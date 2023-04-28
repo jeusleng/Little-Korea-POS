@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using SplashScreenLadera;
+using Guna.UI2.WinForms;
 
 namespace SplashScreen
 {
@@ -20,6 +21,23 @@ namespace SplashScreen
         }
 
         Connection dbCon = new Connection();
+
+        public class ComboboxItem
+        {
+            public string Text { get; set; }
+            public string Value { get; set; }
+
+            public ComboboxItem(string text, string value)
+            {
+                Text = text;
+                Value = value;
+            }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
 
         private void populate()
         {
@@ -45,9 +63,25 @@ namespace SplashScreen
 
         }
 
+        private void bindcomboBox()
+        {
+            dbCon.openConnection();
+            string query = "SELECT * FROM categoryTable";
+            SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+            SqlDataReader reader = cmd.ExecuteReader();
+            categoryDropdown.Items.Clear();
+            while (reader.Read())
+            {
+                categoryDropdown.Items.Add(new ComboboxItem(reader["category_name"].ToString(), reader["category_id"].ToString()));
+            }
+            reader.Close();
+            dbCon.closeConnection();
+        }
+
         private void ProductsManagement_Load(object sender, EventArgs e)
         {
             populate();
+            bindcomboBox();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -65,12 +99,19 @@ namespace SplashScreen
 
         }
 
+        private void categoryDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
         private void insertButton_Click(object sender, EventArgs e)
         {
             try
             {
+                ComboboxItem selectedItem = (ComboboxItem)categoryDropdown.SelectedItem;
+                int categoryId = Convert.ToInt32(selectedItem.Value);
                 dbCon.openConnection();
-                string query = "insert into productsTable values('" + productName.Text + "', '" + productPrice.Text + "', '" + stock.Text + "', '" + category.Text + "')";
+                string query = "insert into productsTable values('" + productName.Text + "', '" + productPrice.Text + "', '" + stock.Text + "', '" + categoryId + "')";
                 SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
 
                 cmd.ExecuteNonQuery();
@@ -83,7 +124,7 @@ namespace SplashScreen
                 productName.Text = "";
                 productPrice.Text = "";
                 stock.Text = "";
-                category.Text = "";
+                categoryDropdown.SelectedItem = null;
             }
             catch (Exception ex)
             {
@@ -105,13 +146,20 @@ namespace SplashScreen
                 productName.Text = rows.Cells["product_name"].Value.ToString();
                 productPrice.Text = rows.Cells["product_price"].Value.ToString();
                 stock.Text = rows.Cells["stock"].Value.ToString();
-                category.Text = rows.Cells["category_id"].Value.ToString();
+                foreach (ComboboxItem item in categoryDropdown.Items)
+                {
+                    if (item.Value == rows.Cells["category_id"].Value.ToString())
+                    {
+                        categoryDropdown.SelectedItem = item;
+                        break;
+                    }
+                }
             }
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            if (productName.Text == string.Empty || productPrice.Text == string.Empty || stock.Text == string.Empty || category.Text == string.Empty)
+            if (productName.Text == string.Empty || productPrice.Text == string.Empty || stock.Text == string.Empty || categoryDropdown.SelectedItem == null)
             {
                 MessageBox.Show("Please fill out all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -124,7 +172,9 @@ namespace SplashScreen
 
                 if (dataSet.Tables[0].Rows.Count != 0)
                 {
-                    SqlCommand cmd = new SqlCommand("update productsTable set product_name='" + productName.Text + "', product_price='" + productPrice.Text + "', stock='" + stock.Text + "' where product_id='" + productId.Text + "'", dbCon.getConnection());
+                    ComboboxItem selectedItem = (ComboboxItem)categoryDropdown.SelectedItem;
+                    int categoryId = Convert.ToInt32(selectedItem.Value);
+                    SqlCommand cmd = new SqlCommand("update productsTable set product_name='" + productName.Text + "', product_price='" + productPrice.Text + "', stock='" + stock.Text + "', category_id='" + categoryId + "' where product_id='" + productId.Text + "'", dbCon.getConnection());
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Product information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -136,7 +186,7 @@ namespace SplashScreen
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (productName.Text == string.Empty || productPrice.Text == string.Empty || stock.Text == string.Empty || category.Text == string.Empty)
+            if (productName.Text == string.Empty || productPrice.Text == string.Empty || stock.Text == string.Empty || categoryDropdown.SelectedItem == null)
             {
                 MessageBox.Show("Please fill out all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
