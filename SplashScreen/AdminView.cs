@@ -66,7 +66,7 @@ namespace SplashScreen
 
         private void btnTools_Click(object sender, EventArgs e)
         {
-            
+            openChildForm(new CategoryManagement());
         }
         
 

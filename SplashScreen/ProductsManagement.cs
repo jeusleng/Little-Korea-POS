@@ -70,9 +70,16 @@ namespace SplashScreen
             SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
             SqlDataReader reader = cmd.ExecuteReader();
             categoryDropdown.Items.Clear();
-            while (reader.Read())
+            if (!reader.HasRows)
             {
-                categoryDropdown.Items.Add(new ComboboxItem(reader["category_name"].ToString(), reader["category_id"].ToString()));
+                categoryDropdown.Items.Add(new ComboboxItem("No categories available.", null));
+            }
+            else
+            {
+                while (reader.Read())
+                {
+                    categoryDropdown.Items.Add(new ComboboxItem(reader["category_name"].ToString(), reader["category_id"].ToString()));
+                }
             }
             reader.Close();
             dbCon.closeConnection();

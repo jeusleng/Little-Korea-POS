@@ -374,6 +374,12 @@
     <Compile Include="AccountMgmt.designer.cs">
       <DependentUpon>AccountMgmt.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryManagement.designer.cs">
+      <DependentUpon>CategoryManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryManagement.resx">
+      <DependentUpon>CategoryManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsManagement.resx">
       <DependentUpon>ProductsManagement.cs</DependentUpon>
