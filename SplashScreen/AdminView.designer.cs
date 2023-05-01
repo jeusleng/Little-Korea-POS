@@ -54,6 +54,7 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -65,6 +66,7 @@
             this.panelLogo.SuspendLayout();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -214,7 +216,7 @@
             this.exitBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exitBtn.Location = new System.Drawing.Point(0, 624);
@@ -222,7 +224,7 @@
             this.exitBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.exitBtn.Size = new System.Drawing.Size(257, 121);
             this.exitBtn.TabIndex = 9;
-            this.exitBtn.Text = "  Exit";
+            this.exitBtn.Text = "  Logout";
             this.exitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.exitBtn.UseVisualStyleBackColor = true;
@@ -379,7 +381,7 @@
             this.roleLabel.BackColor = System.Drawing.Color.Transparent;
             this.roleLabel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.roleLabel.Location = new System.Drawing.Point(117, 104);
+            this.roleLabel.Location = new System.Drawing.Point(135, 104);
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(41, 26);
             this.roleLabel.TabIndex = 12;
@@ -393,7 +395,7 @@
             this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.usernameLabel.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.usernameLabel.Location = new System.Drawing.Point(108, 68);
+            this.usernameLabel.Location = new System.Drawing.Point(126, 68);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(144, 42);
             this.usernameLabel.TabIndex = 11;
@@ -406,6 +408,7 @@
             this.panelChildForm.BackColor = System.Drawing.Color.Transparent;
             this.panelChildForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelChildForm.BackgroundImage")));
             this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelChildForm.Controls.Add(this.pictureBox9);
             this.panelChildForm.Controls.Add(this.pictureBox1);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(278, 0);
@@ -427,6 +430,16 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(56, 64);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(715, 498);
+            this.pictureBox9.TabIndex = 1;
+            this.pictureBox9.TabStop = false;
             // 
             // Form1
             // 
@@ -457,6 +470,7 @@
             this.panelLogo.PerformLayout();
             this.panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,6 +501,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }
 

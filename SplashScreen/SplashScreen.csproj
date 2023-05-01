@@ -375,6 +375,12 @@
     <Compile Include="CashierManagement.designer.cs">
       <DependentUpon>CashierManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryDetails.Designer.cs">
+      <DependentUpon>CategoryDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -457,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CashierManagement.resx">
       <DependentUpon>CashierManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryDetails.resx">
+      <DependentUpon>CategoryDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryManagement.resx">
       <DependentUpon>CategoryManagement.cs</DependentUpon>

@@ -47,7 +47,7 @@ namespace SplashScreenLadera
             this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.usernameLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.usernameLabel.Location = new System.Drawing.Point(401, 99);
+            this.usernameLabel.Location = new System.Drawing.Point(384, 99);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(118, 35);
             this.usernameLabel.TabIndex = 25;
@@ -61,7 +61,7 @@ namespace SplashScreenLadera
             this.roleLabel.BackColor = System.Drawing.Color.Transparent;
             this.roleLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.roleLabel.Location = new System.Drawing.Point(401, 134);
+            this.roleLabel.Location = new System.Drawing.Point(384, 134);
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(57, 35);
             this.roleLabel.TabIndex = 26;
@@ -108,7 +108,7 @@ namespace SplashScreenLadera
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(270, 134);
+            this.label2.Location = new System.Drawing.Point(253, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 35);
             this.label2.TabIndex = 30;
@@ -122,7 +122,7 @@ namespace SplashScreenLadera
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(270, 99);
+            this.label3.Location = new System.Drawing.Point(253, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 35);
             this.label3.TabIndex = 29;
@@ -134,9 +134,9 @@ namespace SplashScreenLadera
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(177, 86);
+            this.pictureBox1.Location = new System.Drawing.Point(155, 86);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 93);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
