@@ -120,7 +120,8 @@ namespace SplashScreen
 
                 if (dataSet.Tables[0].Rows.Count != 0)
                 {
-                    SqlCommand cmd = new SqlCommand("update cashierTable set first_name='" + firstName.Text + "', last_name='" + lastName.Text + "', contact_no='" + contactNum.Text + "', birthday='" + birthday.Text + "', date_hired='" + dateHired.Text + "', salary='" + salary.Text + "', where cashier_id='" + this.cashierId.Text + "'", dbCon.getConnection());
+                    SqlCommand cmd = new SqlCommand("update cashierTable set first_name='" + firstName.Text + "', last_name='" + lastName.Text + "', contact_no='" + contactNum.Text + "', birthday='" + birthday.Text + "', date_hired='" + dateHired.Text + "', salary='" + salary.Text + "' where cashier_id='" + cashierId.Text + "'", dbCon.getConnection());
+
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Cashier name updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -163,19 +164,36 @@ namespace SplashScreen
                     
                 }
                 dbCon.closeConnection();
+                firstName.Text = " ";
+                lastName.Text = " ";
                 contactNum.Text = "";
+                birthday.Text = " ";
+                dateHired.Text = " ";
+                salary.Text = " ";
                 populate();
             }
         }
 
         private void viewDetailsButton_Click(object sender, EventArgs e)
         {
+            if (dataGridview.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dataGridview.SelectedRows[0];
+                string firstName = row.Cells["first_name"].Value.ToString();
+                string lastName = row.Cells["last_name"].Value.ToString();
+                string contactNumber = row.Cells["contact_no"].Value.ToString();
+                string birthday = row.Cells["birthday"].Value.ToString();
+                string dateHired = row.Cells["date_hired"].Value.ToString();
+                decimal salary = decimal.Parse(row.Cells["salary"].Value.ToString());
+                CashierDetails detailsForm = new CashierDetails(firstName, lastName, contactNumber, birthday, dateHired, salary);
+                detailsForm.ShowDialog();
+            }
 
         }
         public void searchCashier(String searchValue)
         {
             dbCon.openConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("select cashier_id, Cashier_name from cashierTable where concat(cashier_id, Cashier_name) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter("select cashier_id, first_name, last_name, username, contact_no, birthday, date_hired, salary from cashierTable where concat(cashier_id, first_name, last_name, username, contact_no, birthday, date_hired, salary) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
             DataTable newDataTable = new DataTable();
             adapter.Fill(newDataTable);
             dataGridview.DataSource = newDataTable;

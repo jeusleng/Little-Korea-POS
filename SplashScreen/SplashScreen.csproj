@@ -369,6 +369,12 @@
     <Compile Include="AdminView.designer.cs">
       <DependentUpon>AdminView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CashierDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashierDetails.Designer.cs">
+      <DependentUpon>CashierDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="CashierManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -460,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierDetails.resx">
+      <DependentUpon>CashierDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CashierManagement.resx">
       <DependentUpon>CashierManagement.cs</DependentUpon>
