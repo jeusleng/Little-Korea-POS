@@ -152,7 +152,7 @@ namespace SplashScreenLadera
             this.name.BackColor = System.Drawing.Color.Transparent;
             this.name.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.ForeColor = System.Drawing.Color.Maroon;
-            this.name.Location = new System.Drawing.Point(405, 107);
+            this.name.Location = new System.Drawing.Point(409, 107);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(75, 35);
             this.name.TabIndex = 36;
