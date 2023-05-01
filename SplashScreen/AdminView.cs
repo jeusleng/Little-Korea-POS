@@ -80,10 +80,11 @@ namespace SplashScreen
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
+            openChildForm(new CashierManagement());
             //..
             //your codes
             //..
-            
+
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
