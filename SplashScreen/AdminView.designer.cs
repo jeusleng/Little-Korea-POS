@@ -119,7 +119,7 @@
             // 
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(25, 444);
+            this.pictureBox6.Location = new System.Drawing.Point(25, 447);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(27, 26);
             this.pictureBox6.TabIndex = 16;
@@ -174,13 +174,13 @@
             this.dbBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.dbBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.dbBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dbBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dbBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.dbBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dbBtn.Location = new System.Drawing.Point(0, 579);
             this.dbBtn.Name = "dbBtn";
             this.dbBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.dbBtn.Size = new System.Drawing.Size(261, 45);
+            this.dbBtn.Size = new System.Drawing.Size(257, 45);
             this.dbBtn.TabIndex = 11;
             this.dbBtn.Text = "  Database Backup";
             this.dbBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -194,13 +194,13 @@
             this.ordersBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.ordersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ordersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordersBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordersBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.ordersBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ordersBtn.Location = new System.Drawing.Point(0, 534);
             this.ordersBtn.Name = "ordersBtn";
             this.ordersBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.ordersBtn.Size = new System.Drawing.Size(261, 45);
+            this.ordersBtn.Size = new System.Drawing.Size(257, 45);
             this.ordersBtn.TabIndex = 10;
             this.ordersBtn.Text = "  Orders";
             this.ordersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -214,13 +214,13 @@
             this.exitBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exitBtn.Location = new System.Drawing.Point(0, 624);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.exitBtn.Size = new System.Drawing.Size(261, 121);
+            this.exitBtn.Size = new System.Drawing.Size(257, 121);
             this.exitBtn.TabIndex = 9;
             this.exitBtn.Text = "  Exit";
             this.exitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -235,13 +235,13 @@
             this.cashierBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.cashierBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.cashierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashierBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.cashierBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cashierBtn.Location = new System.Drawing.Point(0, 489);
             this.cashierBtn.Name = "cashierBtn";
             this.cashierBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.cashierBtn.Size = new System.Drawing.Size(261, 45);
+            this.cashierBtn.Size = new System.Drawing.Size(257, 45);
             this.cashierBtn.TabIndex = 8;
             this.cashierBtn.Text = "  Cashier Management";
             this.cashierBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,13 +256,13 @@
             this.catBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.catBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.catBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.catBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.catBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.catBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.catBtn.Location = new System.Drawing.Point(0, 444);
             this.catBtn.Name = "catBtn";
             this.catBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.catBtn.Size = new System.Drawing.Size(261, 45);
+            this.catBtn.Size = new System.Drawing.Size(257, 45);
             this.catBtn.TabIndex = 6;
             this.catBtn.Text = "  Category Management";
             this.catBtn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -277,13 +277,13 @@
             this.productsBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.productsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.productsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.productsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productsBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.productsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productsBtn.Location = new System.Drawing.Point(0, 399);
             this.productsBtn.Name = "productsBtn";
             this.productsBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.productsBtn.Size = new System.Drawing.Size(261, 45);
+            this.productsBtn.Size = new System.Drawing.Size(257, 45);
             this.productsBtn.TabIndex = 5;
             this.productsBtn.Text = "  Products Management";
             this.productsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,13 +298,13 @@
             this.acctBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.acctBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.acctBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.acctBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acctBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acctBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.acctBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.acctBtn.Location = new System.Drawing.Point(0, 354);
             this.acctBtn.Name = "acctBtn";
             this.acctBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.acctBtn.Size = new System.Drawing.Size(261, 45);
+            this.acctBtn.Size = new System.Drawing.Size(257, 45);
             this.acctBtn.TabIndex = 3;
             this.acctBtn.Text = "  Account Management";
             this.acctBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,13 +319,13 @@
             this.dashBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.dashBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.dashBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dashBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashBtn.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashBtn.ForeColor = System.Drawing.Color.Firebrick;
             this.dashBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashBtn.Location = new System.Drawing.Point(0, 315);
             this.dashBtn.Name = "dashBtn";
             this.dashBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.dashBtn.Size = new System.Drawing.Size(261, 39);
+            this.dashBtn.Size = new System.Drawing.Size(257, 39);
             this.dashBtn.TabIndex = 1;
             this.dashBtn.Text = "  Dashboard";
             this.dashBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,18 +343,18 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(261, 315);
+            this.panelLogo.Size = new System.Drawing.Size(257, 315);
             this.panelLogo.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
             this.label1.Location = new System.Drawing.Point(23, 193);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "Current Time:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,11 +363,11 @@
             // 
             this.currentTimeDisplay.AutoSize = true;
             this.currentTimeDisplay.BackColor = System.Drawing.Color.Transparent;
-            this.currentTimeDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentTimeDisplay.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentTimeDisplay.ForeColor = System.Drawing.Color.Firebrick;
-            this.currentTimeDisplay.Location = new System.Drawing.Point(14, 212);
+            this.currentTimeDisplay.Location = new System.Drawing.Point(15, 212);
             this.currentTimeDisplay.Name = "currentTimeDisplay";
-            this.currentTimeDisplay.Size = new System.Drawing.Size(188, 37);
+            this.currentTimeDisplay.Size = new System.Drawing.Size(278, 70);
             this.currentTimeDisplay.TabIndex = 13;
             this.currentTimeDisplay.Text = "currenttime";
             this.currentTimeDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,11 +377,11 @@
             this.roleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.roleLabel.AutoSize = true;
             this.roleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.roleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleLabel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.roleLabel.Location = new System.Drawing.Point(124, 104);
+            this.roleLabel.Location = new System.Drawing.Point(117, 104);
             this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(32, 17);
+            this.roleLabel.Size = new System.Drawing.Size(41, 26);
             this.roleLabel.TabIndex = 12;
             this.roleLabel.Text = "role";
             this.roleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -391,11 +391,11 @@
             this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.usernameLabel.Location = new System.Drawing.Point(123, 71);
+            this.usernameLabel.Location = new System.Drawing.Point(108, 68);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(88, 20);
+            this.usernameLabel.Size = new System.Drawing.Size(144, 42);
             this.usernameLabel.TabIndex = 11;
             this.usernameLabel.Text = "username";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,7 +430,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
