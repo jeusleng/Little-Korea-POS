@@ -187,6 +187,10 @@ namespace SplashScreen
                     MessageBox.Show("Product information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 dbCon.closeConnection();
+                productName.Text = "";
+                productPrice.Text = "";
+                stock.Text = "";
+                categoryDropdown.SelectedItem = null;
                 populate();
             }
         }
@@ -214,8 +218,52 @@ namespace SplashScreen
                     }
                 }
                 dbCon.closeConnection();
+                productName.Text = "";
+                productPrice.Text = "";
+                stock.Text = "";
+                categoryDropdown.SelectedItem = null;
                 populate();
             }
+        }
+
+        private void viewButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridview.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridview.SelectedRows[0];
+
+                // Extract the product details from the selected row
+                int productId = Convert.ToInt32(selectedRow.Cells["product_id"].Value);
+                string productName = Convert.ToString(selectedRow.Cells["product_name"].Value);
+                decimal productPrice = Convert.ToDecimal(selectedRow.Cells["product_price"].Value);
+                int stock = Convert.ToInt32(selectedRow.Cells["stock"].Value);
+                int categoryId = Convert.ToInt32(selectedRow.Cells["category_id"].Value);
+
+                // Create a new instance of the ProductDetails form and pass the product details
+                ProductDetails productDetails = new ProductDetails(productId, productName, productPrice, stock, categoryId);
+                productDetails.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a product to view its details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        public void searchProduct(String searchValue)
+        {
+            dbCon.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter("select product_id, product_name, product_price, stock, category_id from productsTable where concat(product_id, product_name, product_price, stock, category_id) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
+            DataTable newDataTable = new DataTable();
+            adapter.Fill(newDataTable);
+            dataGridview.DataSource = newDataTable;
+            dbCon.closeConnection();
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            searchProduct(searchBox.Text);
         }
     }
 }

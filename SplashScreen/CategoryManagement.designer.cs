@@ -42,6 +42,8 @@
             this.categoryId = new Guna.UI2.WinForms.Guna2TextBox();
             this.productIdLabel = new System.Windows.Forms.Label();
             this.viewDetailsButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,13 +141,13 @@
             this.dataGridview.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.dataGridview.Location = new System.Drawing.Point(395, 103);
+            this.dataGridview.Location = new System.Drawing.Point(382, 198);
             this.dataGridview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridview.Name = "dataGridview";
             this.dataGridview.RowHeadersVisible = false;
             this.dataGridview.RowHeadersWidth = 51;
             this.dataGridview.RowTemplate.Height = 24;
-            this.dataGridview.Size = new System.Drawing.Size(411, 447);
+            this.dataGridview.Size = new System.Drawing.Size(424, 352);
             this.dataGridview.TabIndex = 35;
             this.dataGridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Alizarin;
             this.dataGridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -309,6 +311,51 @@
             this.viewDetailsButton.Text = "View";
             this.viewDetailsButton.Click += new System.EventHandler(this.viewDetailsButton_Click);
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
+            this.label5.Location = new System.Drawing.Point(394, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 26);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Search";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.searchBox.BackColor = System.Drawing.Color.Transparent;
+            this.searchBox.BorderColor = System.Drawing.Color.Maroon;
+            this.searchBox.BorderRadius = 10;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.Firebrick;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.searchBox.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
+            this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
+            this.searchBox.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.searchBox.IconLeftSize = new System.Drawing.Size(17, 17);
+            this.searchBox.Location = new System.Drawing.Point(481, 126);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PasswordChar = '\0';
+            this.searchBox.PlaceholderForeColor = System.Drawing.Color.Maroon;
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(325, 39);
+            this.searchBox.TabIndex = 44;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            // 
             // CategoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -317,6 +364,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 582);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.viewDetailsButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
@@ -351,5 +400,7 @@
         private Guna.UI2.WinForms.Guna2TextBox categoryId;
         private System.Windows.Forms.Label productIdLabel;
         private Guna.UI2.WinForms.Guna2Button viewDetailsButton;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
     }
 }

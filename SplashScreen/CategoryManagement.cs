@@ -167,5 +167,19 @@ namespace SplashScreen
         {
 
         }
+        public void searchCategory(String searchValue)
+        {
+            dbCon.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter("select category_id, category_name from categoryTable where concat(category_id, category_name) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
+            DataTable newDataTable = new DataTable();
+            adapter.Fill(newDataTable);
+            dataGridview.DataSource = newDataTable;
+            dbCon.closeConnection();
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            searchCategory(searchBox.Text);
+        }
     }
 }

@@ -48,6 +48,8 @@ namespace SplashScreenLadera
             this.updateButton = new Guna.UI2.WinForms.Guna2Button();
             this.viewButton = new Guna.UI2.WinForms.Guna2Button();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.usersTable = new SplashScreenLadera.usersTable();
             this.usersTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableTableAdapter = new SplashScreenLadera.usersTableTableAdapters.usersTableTableAdapter();
@@ -111,7 +113,7 @@ namespace SplashScreenLadera
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(53, 121);
+            this.label2.Location = new System.Drawing.Point(27, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 26);
             this.label2.TabIndex = 24;
@@ -139,7 +141,7 @@ namespace SplashScreenLadera
             this.usernameField.IconLeft = ((System.Drawing.Image)(resources.GetObject("usernameField.IconLeft")));
             this.usernameField.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.usernameField.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.usernameField.Location = new System.Drawing.Point(140, 110);
+            this.usernameField.Location = new System.Drawing.Point(114, 114);
             this.usernameField.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.usernameField.Name = "usernameField";
             this.usernameField.PasswordChar = '\0';
@@ -170,7 +172,7 @@ namespace SplashScreenLadera
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(56, 170);
+            this.label3.Location = new System.Drawing.Point(30, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 26);
             this.label3.TabIndex = 29;
@@ -198,7 +200,7 @@ namespace SplashScreenLadera
             this.passwordField.IconLeft = ((System.Drawing.Image)(resources.GetObject("passwordField.IconLeft")));
             this.passwordField.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.passwordField.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.passwordField.Location = new System.Drawing.Point(140, 162);
+            this.passwordField.Location = new System.Drawing.Point(114, 166);
             this.passwordField.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.passwordField.Name = "passwordField";
             this.passwordField.PasswordChar = '\0';
@@ -216,7 +218,7 @@ namespace SplashScreenLadera
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(73, 226);
+            this.label4.Location = new System.Drawing.Point(47, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 26);
             this.label4.TabIndex = 31;
@@ -243,7 +245,7 @@ namespace SplashScreenLadera
             this.roleField.IconLeft = ((System.Drawing.Image)(resources.GetObject("roleField.IconLeft")));
             this.roleField.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.roleField.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.roleField.Location = new System.Drawing.Point(140, 214);
+            this.roleField.Location = new System.Drawing.Point(114, 218);
             this.roleField.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.roleField.Name = "roleField";
             this.roleField.PasswordChar = '\0';
@@ -283,13 +285,13 @@ namespace SplashScreenLadera
             this.dataGridview.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.dataGridview.Location = new System.Drawing.Point(395, 121);
+            this.dataGridview.Location = new System.Drawing.Point(320, 187);
             this.dataGridview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridview.Name = "dataGridview";
             this.dataGridview.RowHeadersVisible = false;
             this.dataGridview.RowHeadersWidth = 51;
             this.dataGridview.RowTemplate.Height = 24;
-            this.dataGridview.Size = new System.Drawing.Size(381, 426);
+            this.dataGridview.Size = new System.Drawing.Size(483, 318);
             this.dataGridview.TabIndex = 32;
             this.dataGridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Alizarin;
             this.dataGridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -328,7 +330,7 @@ namespace SplashScreenLadera
             this.insertButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insertButton.ForeColor = System.Drawing.Color.White;
             this.insertButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.insertButton.Location = new System.Drawing.Point(149, 287);
+            this.insertButton.Location = new System.Drawing.Point(123, 291);
             this.insertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.insertButton.Name = "insertButton";
             this.insertButton.PressedColor = System.Drawing.Color.Transparent;
@@ -354,7 +356,7 @@ namespace SplashScreenLadera
             this.updateButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.ForeColor = System.Drawing.Color.White;
             this.updateButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.updateButton.Location = new System.Drawing.Point(149, 389);
+            this.updateButton.Location = new System.Drawing.Point(123, 393);
             this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateButton.Name = "updateButton";
             this.updateButton.PressedColor = System.Drawing.Color.Transparent;
@@ -380,7 +382,7 @@ namespace SplashScreenLadera
             this.viewButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewButton.ForeColor = System.Drawing.Color.White;
             this.viewButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.viewButton.Location = new System.Drawing.Point(149, 338);
+            this.viewButton.Location = new System.Drawing.Point(123, 342);
             this.viewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewButton.Name = "viewButton";
             this.viewButton.PressedColor = System.Drawing.Color.Transparent;
@@ -406,7 +408,7 @@ namespace SplashScreenLadera
             this.deleteButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.White;
             this.deleteButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.deleteButton.Location = new System.Drawing.Point(149, 440);
+            this.deleteButton.Location = new System.Drawing.Point(123, 444);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.PressedColor = System.Drawing.Color.Transparent;
@@ -418,6 +420,52 @@ namespace SplashScreenLadera
             this.deleteButton.TabIndex = 36;
             this.deleteButton.Text = "Delete";
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.searchBox.BackColor = System.Drawing.Color.Transparent;
+            this.searchBox.BorderColor = System.Drawing.Color.Maroon;
+            this.searchBox.BorderRadius = 10;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.Firebrick;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.searchBox.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
+            this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
+            this.searchBox.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.searchBox.IconLeftSize = new System.Drawing.Size(17, 17);
+            this.searchBox.Location = new System.Drawing.Point(486, 108);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PasswordChar = '\0';
+            this.searchBox.PlaceholderForeColor = System.Drawing.Color.Maroon;
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(290, 39);
+            this.searchBox.TabIndex = 37;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
+            this.label5.Location = new System.Drawing.Point(390, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 26);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Search";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // usersTable
             // 
@@ -441,6 +489,8 @@ namespace SplashScreenLadera
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 582);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.updateButton);
@@ -488,5 +538,7 @@ namespace SplashScreenLadera
         private Guna.UI2.WinForms.Guna2Button updateButton;
         private Guna.UI2.WinForms.Guna2Button viewButton;
         private Guna.UI2.WinForms.Guna2Button deleteButton;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
+        private System.Windows.Forms.Label label5;
     }
 }

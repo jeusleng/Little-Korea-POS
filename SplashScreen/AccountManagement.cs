@@ -70,7 +70,7 @@ namespace SplashScreenLadera
 
         private void passwordField_TextChanged(object sender, EventArgs e)
         {
-
+            passwordField.UseSystemPasswordChar = true;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -123,6 +123,9 @@ namespace SplashScreenLadera
                     MessageBox.Show("User information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 dbCon.closeConnection();
+                usernameField.Text = "";
+                passwordField.Text = "";
+                roleField.Text = "";
                 populate();
             }
         }
@@ -132,25 +135,35 @@ namespace SplashScreenLadera
             try
             {
                 dbCon.openConnection();
-                string query = "insert into usersTable values('" + usernameField.Text + "', '" + passwordField.Text + "', '" + roleField.Text + "')";
+                string query = "select count(*) from usersTable where username = @username";
                 SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+                cmd.Parameters.AddWithValue("@username", usernameField.Text);
+                int count = (int)cmd.ExecuteScalar();
 
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (count > 0)
+                {
+                    MessageBox.Show("Username already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    query = "insert into usersTable values('" + usernameField.Text + "', '" + passwordField.Text + "', '" + roleField.Text + "')";
+                    cmd = new SqlCommand(query, dbCon.getConnection());
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    populate();
+                    usernameField.Text = "";
+                    passwordField.Text = "";
+                    roleField.Text = "";
+                }
 
                 dbCon.closeConnection();
-                populate();
-
-                usernameField.Text = "";
-                passwordField.Text = "";
-                roleField.Text = "";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
@@ -175,6 +188,9 @@ namespace SplashScreenLadera
                     }
                 }
                 dbCon.closeConnection();
+                usernameField.Text = "";
+                passwordField.Text = "";
+                roleField.Text = "";
                 populate();
             }
         }
@@ -195,7 +211,6 @@ namespace SplashScreenLadera
                     passwordField.Text = dt.Rows[0]["password"].ToString();
                     roleField.Text = dt.Rows[0]["role"].ToString();
                     AccountDetails acctDetails = new AccountDetails(username: usernameField.Text, role: roleField.Text);
-                    this.Close();
                     acctDetails.Show();
                 }
                 else
@@ -204,10 +219,35 @@ namespace SplashScreenLadera
                 }
                 dbCon.closeConnection();
             }
+            
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            usernameField.Text = "";
+            passwordField.Text = "";
+            roleField.Text = "";
+        }
+
+        public void searchUser(String searchValue)
+        {
+            dbCon.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter("select username, password from usersTable where concat(username, password) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
+            DataTable newDataTable = new DataTable();
+            adapter.Fill(newDataTable);
+            dataGridview.DataSource = newDataTable;
+            dbCon.closeConnection();
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            searchUser(searchBox.Text);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
