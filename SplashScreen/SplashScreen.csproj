@@ -351,6 +351,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountDetails.Designer.cs">
+      <DependentUpon>AccountDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccountManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,6 +428,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>usersTable.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountDetails.resx">
+      <DependentUpon>AccountDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccountManagement.resx">
       <DependentUpon>AccountManagement.cs</DependentUpon>
     </EmbeddedResource>

@@ -46,6 +46,7 @@ namespace SplashScreen
 
         }
 
+
         private void CategoryManagement_Load(object sender, EventArgs e)
         {
             populate();
@@ -115,9 +116,12 @@ namespace SplashScreen
                     MessageBox.Show("Category name updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 dbCon.closeConnection();
+                categoryName.Text = "";
                 populate();
             }
         }
+
+
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
@@ -134,16 +138,34 @@ namespace SplashScreen
 
                 if (dataSet.Tables[0].Rows.Count != 0)
                 {
-                    if (MessageBox.Show("Do you want to delete this category?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    // Check if there are any products under the selected category
+                    sda = new SqlDataAdapter("select * from productsTable where category_id='" + categoryId.Text + "'", dbCon.getConnection());
+                    dataSet = new DataSet();
+                    sda.Fill(dataSet);
+
+                    if (dataSet.Tables[0].Rows.Count != 0)
                     {
-                        SqlCommand cmd = new SqlCommand("delete from categoryTable where category_id='" + categoryId.Text + "'", dbCon.getConnection());
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Category deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cannot delete category because there are products under this category", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("Do you want to delete this category?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            SqlCommand cmd = new SqlCommand("delete from categoryTable where category_id='" + categoryId.Text + "'", dbCon.getConnection());
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Category deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
                 dbCon.closeConnection();
+                categoryName.Text = "";
                 populate();
             }
+        }
+
+        private void viewDetailsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

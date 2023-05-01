@@ -88,6 +88,8 @@ namespace SplashScreenLadera
 
         }
 
+        
+
         private void dataGridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -177,6 +179,35 @@ namespace SplashScreenLadera
             }
         }
 
-      
+        private void viewButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dbCon.openConnection();
+                string query = "select * from usersTable where username='" + usernameField.Text + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, dbCon.getConnection());
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    idField.Text = dt.Rows[0]["user_id"].ToString();
+                    passwordField.Text = dt.Rows[0]["password"].ToString();
+                    roleField.Text = dt.Rows[0]["role"].ToString();
+                    AccountDetails acctDetails = new AccountDetails(username: usernameField.Text, role: roleField.Text);
+                    this.Close();
+                    acctDetails.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Username not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                dbCon.closeConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

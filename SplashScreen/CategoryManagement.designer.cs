@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryManagement));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryManagement));
             this.label1 = new System.Windows.Forms.Label();
             this.categoryName = new Guna.UI2.WinForms.Guna2TextBox();
             this.insertButton = new Guna.UI2.WinForms.Guna2Button();
@@ -41,7 +41,7 @@
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.categoryId = new Guna.UI2.WinForms.Guna2TextBox();
             this.productIdLabel = new System.Windows.Forms.Label();
-            this.viewButton = new Guna.UI2.WinForms.Guna2Button();
+            this.viewDetailsButton = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(167, 28);
+            this.label1.Location = new System.Drawing.Point(167, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(510, 70);
             this.label1.TabIndex = 28;
@@ -74,6 +74,7 @@
             this.categoryName.ForeColor = System.Drawing.Color.Firebrick;
             this.categoryName.HoverState.BorderColor = System.Drawing.Color.Maroon;
             this.categoryName.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
+            this.categoryName.IconLeft = ((System.Drawing.Image)(resources.GetObject("categoryName.IconLeft")));
             this.categoryName.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.categoryName.IconLeftSize = new System.Drawing.Size(17, 17);
             this.categoryName.Location = new System.Drawing.Point(160, 173);
@@ -282,30 +283,31 @@
             this.productIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productIdLabel.Visible = false;
             // 
-            // viewButton
+            // viewDetailsButton
             // 
-            this.viewButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewButton.BackColor = System.Drawing.Color.Transparent;
-            this.viewButton.BorderRadius = 10;
-            this.viewButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.viewButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.viewButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.viewButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.viewButton.FillColor = System.Drawing.Color.Maroon;
-            this.viewButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewButton.ForeColor = System.Drawing.Color.White;
-            this.viewButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.viewButton.Location = new System.Drawing.Point(172, 291);
-            this.viewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.viewButton.Name = "viewButton";
-            this.viewButton.PressedColor = System.Drawing.Color.Transparent;
-            this.viewButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
-            this.viewButton.ShadowDecoration.Enabled = true;
-            this.viewButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.viewButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.viewButton.Size = new System.Drawing.Size(175, 47);
-            this.viewButton.TabIndex = 43;
-            this.viewButton.Text = "View";
+            this.viewDetailsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewDetailsButton.BackColor = System.Drawing.Color.Transparent;
+            this.viewDetailsButton.BorderRadius = 10;
+            this.viewDetailsButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.viewDetailsButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.viewDetailsButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.viewDetailsButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.viewDetailsButton.FillColor = System.Drawing.Color.Maroon;
+            this.viewDetailsButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewDetailsButton.ForeColor = System.Drawing.Color.White;
+            this.viewDetailsButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
+            this.viewDetailsButton.Location = new System.Drawing.Point(172, 291);
+            this.viewDetailsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewDetailsButton.Name = "viewDetailsButton";
+            this.viewDetailsButton.PressedColor = System.Drawing.Color.Transparent;
+            this.viewDetailsButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
+            this.viewDetailsButton.ShadowDecoration.Enabled = true;
+            this.viewDetailsButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.viewDetailsButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
+            this.viewDetailsButton.Size = new System.Drawing.Size(175, 47);
+            this.viewDetailsButton.TabIndex = 43;
+            this.viewDetailsButton.Text = "View";
+            this.viewDetailsButton.Click += new System.EventHandler(this.viewDetailsButton_Click);
             // 
             // CategoryManagement
             // 
@@ -315,7 +317,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 582);
-            this.Controls.Add(this.viewButton);
+            this.Controls.Add(this.viewDetailsButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.productIdLabel);
@@ -348,6 +350,6 @@
         private Guna.UI2.WinForms.Guna2Button deleteButton;
         private Guna.UI2.WinForms.Guna2TextBox categoryId;
         private System.Windows.Forms.Label productIdLabel;
-        private Guna.UI2.WinForms.Guna2Button viewButton;
+        private Guna.UI2.WinForms.Guna2Button viewDetailsButton;
     }
 }
