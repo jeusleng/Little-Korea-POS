@@ -233,7 +233,7 @@ namespace SplashScreenLadera
         public void searchUser(String searchValue)
         {
             dbCon.openConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("select username, password from usersTable where concat(username, password) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter("select user_id, username, password, role from usersTable where concat(user_id, username, password, role) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
             DataTable newDataTable = new DataTable();
             adapter.Fill(newDataTable);
             dataGridview.DataSource = newDataTable;
