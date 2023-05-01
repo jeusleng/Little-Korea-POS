@@ -165,6 +165,9 @@ namespace SplashScreen
 
         private void viewDetailsButton_Click(object sender, EventArgs e)
         {
+            int categoryId = int.Parse(this.categoryId.Text);
+            CategoryDetails detailsForm = new CategoryDetails(categoryId);
+            detailsForm.ShowDialog();
 
         }
         public void searchCategory(String searchValue)

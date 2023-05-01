@@ -369,6 +369,12 @@
     <Compile Include="AdminView.designer.cs">
       <DependentUpon>AdminView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryDetails.Designer.cs">
+      <DependentUpon>CategoryDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -448,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryDetails.resx">
+      <DependentUpon>CategoryDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryManagement.resx">
       <DependentUpon>CategoryManagement.cs</DependentUpon>
