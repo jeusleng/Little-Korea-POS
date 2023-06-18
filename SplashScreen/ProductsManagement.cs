@@ -44,14 +44,34 @@ namespace SplashScreen
             try
             {
                 dbCon.openConnection();
-                string query = "select * from productsTable";
+                string query = "select * from productsTable inner join categoryTable on productsTable.category_id = categoryTable.category_id";
                 SqlDataAdapter sda = new SqlDataAdapter(query, dbCon.getConnection());
                 SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(sda);
                 var dataSet = new DataSet();
                 sda.Fill(dataSet);
 
-                dataGridview.DataSource = dataSet.Tables[0];
+                DataTable dataTable = dataSet.Tables[0];
+                dataTable.Columns.Add("No", typeof(int));
 
+                //add counter 
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    dataTable.Rows[i]["No"] = i + 1;
+                }
+
+                dataGridview.DataSource = dataTable;
+
+                dataGridview.Columns["No"].DisplayIndex = 0;
+                dataGridview.Columns["product_id"].Visible = false;
+                dataGridview.Columns["category_id"].Visible = false;
+                dataGridview.Columns["category_id1"].Visible = false;
+
+                //rename header
+                dataGridview.Columns[0].HeaderText = "No";
+                dataGridview.Columns[1].HeaderText = "Product Name";
+                dataGridview.Columns[2].HeaderText = "Price";
+                dataGridview.Columns[3].HeaderText = "Stock";
+                dataGridview.Columns[6].HeaderText = "Category Name";
 
                 dbCon.closeConnection();
 
@@ -116,22 +136,32 @@ namespace SplashScreen
             try
             {
                 ComboboxItem selectedItem = (ComboboxItem)categoryDropdown.SelectedItem;
-                int categoryId = Convert.ToInt32(selectedItem.Value);
-                dbCon.openConnection();
-                string query = "insert into productsTable values('" + productName.Text + "', '" + productPrice.Text + "', '" + stock.Text + "', '" + categoryId + "')";
-                SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+               
+                if (productName.Text == string.Empty || productPrice.Text == string.Empty || stock.Text == string.Empty || categoryDropdown.SelectedItem == null)
+                {
+                    MessageBox.Show("Please fill out all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    int categoryId = Convert.ToInt32(selectedItem.Value);
+                    dbCon.openConnection();
+                    string query = "insert into productsTable values('" + productName.Text + "', '" + productPrice.Text + "', '" + stock.Text + "', '" + categoryId + "')";
+                    SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                dbCon.closeConnection();
-                populate();
+                    dbCon.closeConnection();
+                    populate();
 
-                productName.Text = "";
-                productPrice.Text = "";
-                stock.Text = "";
-                categoryDropdown.SelectedItem = null;
+                    productName.Text = "";
+                    productPrice.Text = "";
+                    stock.Text = "";
+                    categoryDropdown.SelectedItem = null;
+                }
+                
+               
             }
             catch (Exception ex)
             {
@@ -253,12 +283,45 @@ namespace SplashScreen
 
         public void searchProduct(String searchValue)
         {
-            dbCon.openConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("select product_id, product_name, product_price, stock, category_id from productsTable where concat(product_id, product_name, product_price, stock, category_id) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
-            DataTable newDataTable = new DataTable();
-            adapter.Fill(newDataTable);
-            dataGridview.DataSource = newDataTable;
-            dbCon.closeConnection();
+            try
+            {
+                dbCon.openConnection();
+                string query = "select * from productsTable inner join categoryTable on productsTable.category_id = categoryTable.category_id where product_name like '%" + searchBox.Text + "%'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, dbCon.getConnection());
+                SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(sda);
+                var dataSet = new DataSet();
+                sda.Fill(dataSet);
+
+                DataTable dataTable = dataSet.Tables[0];
+                dataTable.Columns.Add("No", typeof(int));
+
+                //add counter 
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    dataTable.Rows[i]["No"] = i + 1;
+                }
+
+                dataGridview.DataSource = dataTable;
+
+                dataGridview.Columns["No"].DisplayIndex = 0;
+                dataGridview.Columns["product_id"].Visible = false;
+                dataGridview.Columns["category_id"].Visible = false;
+                dataGridview.Columns["category_id1"].Visible = false;
+
+                //rename header
+                dataGridview.Columns[0].HeaderText = "No";
+                dataGridview.Columns[1].HeaderText = "Product Name";
+                dataGridview.Columns[2].HeaderText = "Price";
+                dataGridview.Columns[3].HeaderText = "Stock";
+                dataGridview.Columns[6].HeaderText = "Category Name";
+
+                dbCon.closeConnection();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
