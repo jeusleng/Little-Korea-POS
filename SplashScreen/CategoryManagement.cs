@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using SplashScreenLadera;
 using Guna.UI2.WinForms;
+using System.Web.UI.WebControls;
 
 namespace SplashScreen
 {
@@ -33,8 +34,23 @@ namespace SplashScreen
                 var dataSet = new DataSet();
                 sda.Fill(dataSet);
 
-                dataGridview.DataSource = dataSet.Tables[0];
+                DataTable dataTable = dataSet.Tables[0];
+                dataTable.Columns.Add("No", typeof(int));
 
+                //add counter 
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    dataTable.Rows[i]["No"] = i + 1;
+                }
+
+                dataGridview.DataSource = dataTable;
+
+                dataGridview.Columns["No"].DisplayIndex = 0;
+                dataGridview.Columns["category_id"].Visible = false;
+
+                //rename header
+                dataGridview.Columns[0].HeaderText = "No";
+                dataGridview.Columns[1].HeaderText = "Category Name";
 
                 dbCon.closeConnection();
 
@@ -66,18 +82,25 @@ namespace SplashScreen
         {
             try
             {
-                dbCon.openConnection();
-                string query = "insert into categoryTable values('" + categoryName.Text + "')";
-                SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+                if (categoryName.Text != string.Empty)
+                {
+                    dbCon.openConnection();
+                    string query = "insert into categoryTable values('" + categoryName.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Category added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Category added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                dbCon.closeConnection();
-                populate();
+                    dbCon.closeConnection();
+                    populate();
 
-                categoryName.Text = "";
+                    categoryName.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Please fill out category field.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
@@ -172,12 +195,38 @@ namespace SplashScreen
         }
         public void searchCategory(String searchValue)
         {
-            dbCon.openConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("select category_id, category_name from categoryTable where concat(category_id, category_name) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
-            DataTable newDataTable = new DataTable();
-            adapter.Fill(newDataTable);
-            dataGridview.DataSource = newDataTable;
-            dbCon.closeConnection();
+            try
+            {
+                dbCon.openConnection();
+                string query = "SELECT * FROM categoryTable WHERE category_name LIKE '%" + searchBox.Text + "%'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, dbCon.getConnection());
+                SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(sda);
+                var dataSet = new DataSet();
+                sda.Fill(dataSet);
+
+                DataTable dataTable = dataSet.Tables[0];
+                dataTable.Columns.Add("No", typeof(int));
+
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    dataTable.Rows[i]["No"] = i + 1;
+                }
+
+                dataGridview.DataSource = dataTable;
+
+                dataGridview.Columns["No"].DisplayIndex = 0;
+                dataGridview.Columns["category_id"].Visible = false;
+
+                dataGridview.Columns[0].HeaderText = "No";
+                dataGridview.Columns[1].HeaderText = "Category Name";
+
+                dbCon.closeConnection();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
