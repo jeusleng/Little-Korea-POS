@@ -136,17 +136,35 @@ namespace SplashScreen
             try
             {
                 ComboboxItem selectedItem = (ComboboxItem)categoryDropdown.SelectedItem;
-               
+
                 if (productName.Text == string.Empty || productPrice.Text == string.Empty || stock.Text == string.Empty || categoryDropdown.SelectedItem == null)
                 {
                     MessageBox.Show("Please fill out all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
+                    // Validate if the product price is a valid decimal value
+                    if (!decimal.TryParse(productPrice.Text, out decimal price))
+                    {
+                        MessageBox.Show("Invalid product price. Please enter a valid decimal value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Validate if the stock is a valid decimal value
+                    if (!int.TryParse(stock.Text, out int stockQuantity))
+                    {
+                        MessageBox.Show("Invalid stock quantity. Please enter a valid integer value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     int categoryId = Convert.ToInt32(selectedItem.Value);
                     dbCon.openConnection();
-                    string query = "insert into productsTable values('" + productName.Text + "', '" + productPrice.Text + "', '" + stock.Text + "', '" + categoryId + "')";
+                    string query = "INSERT INTO productsTable (product_name, product_price, stock, category_id) VALUES (@productName, @productPrice, @stock, @categoryId)";
                     SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+                    cmd.Parameters.AddWithValue("@productName", productName.Text);
+                    cmd.Parameters.AddWithValue("@productPrice", price);
+                    cmd.Parameters.AddWithValue("@stock", stockQuantity);
+                    cmd.Parameters.AddWithValue("@categoryId", categoryId);
 
                     cmd.ExecuteNonQuery();
 
@@ -160,14 +178,14 @@ namespace SplashScreen
                     stock.Text = "";
                     categoryDropdown.SelectedItem = null;
                 }
-                
-               
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+
 
         private void category_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -211,7 +229,22 @@ namespace SplashScreen
                 {
                     ComboboxItem selectedItem = (ComboboxItem)categoryDropdown.SelectedItem;
                     int categoryId = Convert.ToInt32(selectedItem.Value);
-                    SqlCommand cmd = new SqlCommand("update productsTable set product_name='" + productName.Text + "', product_price='" + productPrice.Text + "', stock='" + stock.Text + "', category_id='" + categoryId + "' where product_id='" + productId.Text + "'", dbCon.getConnection());
+
+                    // Validate if the product price is a valid decimal value
+                    if (!decimal.TryParse(productPrice.Text, out decimal price))
+                    {
+                        MessageBox.Show("Invalid product price. Please enter a valid decimal value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Validate if the stock is a valid decimal value
+                    if (!int.TryParse(stock.Text, out int stockQuantity))
+                    {
+                        MessageBox.Show("Invalid stock quantity. Please enter a valid integer value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    SqlCommand cmd = new SqlCommand("update productsTable set product_name='" + productName.Text + "', product_price='" + price + "', stock='" + stock.Text + "', category_id='" + categoryId + "' where product_id='" + productId.Text + "'", dbCon.getConnection());
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Product information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -224,6 +257,7 @@ namespace SplashScreen
                 populate();
             }
         }
+
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
@@ -336,11 +370,13 @@ namespace SplashScreen
 
         private void productPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            // Allow only numeric digits, decimal point, backspace, and delete key
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
-                e.Handled = true; // Cancels the keypress event
+                e.Handled = true; // Cancel the keypress event
             }
         }
+
 
         private void stock_KeyPress(object sender, KeyPressEventArgs e)
         {
