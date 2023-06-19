@@ -277,14 +277,24 @@ namespace SplashScreen
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-                    SqlDataAdapter sda2 = new SqlDataAdapter("select count (*) from usersTable where username='" + usernameField.Text + "' and password='" + passwordField.Text + "'", con.getConnection());
+                    SqlDataAdapter sda2 = new SqlDataAdapter("select count (*), role, user_id from usersTable where username='" + usernameField.Text + "' and password='" + passwordField.Text + "' group by role, user_id", con.getConnection());
                     DataTable dt2 = new DataTable();
                     sda2.Fill(dt2);
                     if (dt2.Rows[0][0].ToString() == "1")
                     {
-                        Form1 form1 = new Form1(username: usernameField.Text);
-                        this.Hide();
-                        form1.Show();
+                        if (dt2.Rows[0][1].ToString() == "Adminstrator")
+                        {
+                            Form1 form1 = new Form1(username: usernameField.Text);
+                            this.Hide();
+                            form1.Show();
+                        }
+                        else
+                        {
+                            CashierScreen cashierScreen = new CashierScreen(username: usernameField.Text, userId: dt2.Rows[0][2].ToString());
+                            this.Hide();
+                            cashierScreen.Show();
+                        }
+                        
                     }
                     else
                     {
