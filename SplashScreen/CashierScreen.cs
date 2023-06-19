@@ -274,7 +274,7 @@ namespace SplashScreenLadera
                 cmd1.ExecuteNonQuery();
 
                 //select recently created transaction
-                string query2 = "select top 1 transaction_id from transactionsTable order by transaction_date asc";
+                string query2 = "select top 1 transaction_id from transactionsTable order by transaction_date desc";
                 SqlCommand cmd2 = new SqlCommand(query2, dbCon.getConnection());
                 int transactionId = Convert.ToInt32(cmd2.ExecuteScalar());
                 transIdLabel.Text = transactionId.ToString();
