@@ -316,5 +316,44 @@ namespace SplashScreen
         {
 
         }
+
+        private void contactNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+        }
+
+        private void salary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+        }
+
+        private void firstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void firstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+
+        }
+
+        private void lastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+
+        }
     }
 }

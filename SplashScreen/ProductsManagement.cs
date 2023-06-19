@@ -328,5 +328,26 @@ namespace SplashScreen
         {
             searchProduct(searchBox.Text);
         }
+
+        private void productPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+        }
+
+        private void stock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+        }
     }
 }

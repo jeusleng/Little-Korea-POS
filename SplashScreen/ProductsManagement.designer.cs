@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.productName = new Guna.UI2.WinForms.Guna2TextBox();
             this.productPrice = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,10 +59,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(141, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(188, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 56);
+            this.label1.Size = new System.Drawing.Size(501, 70);
             this.label1.TabIndex = 28;
             this.label1.Text = "Products Management";
             // 
@@ -86,14 +85,14 @@
             this.productName.IconLeft = ((System.Drawing.Image)(resources.GetObject("productName.IconLeft")));
             this.productName.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.productName.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.productName.Location = new System.Drawing.Point(107, 104);
-            this.productName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.productName.Location = new System.Drawing.Point(143, 128);
+            this.productName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.productName.Name = "productName";
             this.productName.PasswordChar = '\0';
             this.productName.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.productName.PlaceholderText = "";
             this.productName.SelectedText = "";
-            this.productName.Size = new System.Drawing.Size(149, 32);
+            this.productName.Size = new System.Drawing.Size(199, 39);
             this.productName.TabIndex = 29;
             // 
             // productPrice
@@ -116,15 +115,17 @@
             this.productPrice.IconLeft = ((System.Drawing.Image)(resources.GetObject("productPrice.IconLeft")));
             this.productPrice.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.productPrice.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.productPrice.Location = new System.Drawing.Point(107, 145);
-            this.productPrice.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.productPrice.Location = new System.Drawing.Point(143, 178);
+            this.productPrice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.productPrice.Name = "productPrice";
             this.productPrice.PasswordChar = '\0';
             this.productPrice.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.productPrice.PlaceholderText = "";
             this.productPrice.SelectedText = "";
-            this.productPrice.Size = new System.Drawing.Size(149, 32);
+            this.productPrice.Size = new System.Drawing.Size(199, 39);
             this.productPrice.TabIndex = 29;
+            this.productPrice.TextChanged += new System.EventHandler(this.productPrice_TextChanged);
+            this.productPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productPrice_KeyPress);
             // 
             // stock
             // 
@@ -146,15 +147,16 @@
             this.stock.IconLeft = ((System.Drawing.Image)(resources.GetObject("stock.IconLeft")));
             this.stock.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.stock.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.stock.Location = new System.Drawing.Point(107, 188);
-            this.stock.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.stock.Location = new System.Drawing.Point(143, 231);
+            this.stock.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.stock.Name = "stock";
             this.stock.PasswordChar = '\0';
             this.stock.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.stock.PlaceholderText = "";
             this.stock.SelectedText = "";
-            this.stock.Size = new System.Drawing.Size(149, 32);
+            this.stock.Size = new System.Drawing.Size(199, 39);
             this.stock.TabIndex = 29;
+            this.stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stock_KeyPress);
             // 
             // insertButton
             // 
@@ -169,15 +171,15 @@
             this.insertButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insertButton.ForeColor = System.Drawing.Color.White;
             this.insertButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.insertButton.Location = new System.Drawing.Point(115, 274);
-            this.insertButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insertButton.Location = new System.Drawing.Point(153, 337);
+            this.insertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.insertButton.Name = "insertButton";
             this.insertButton.PressedColor = System.Drawing.Color.Transparent;
             this.insertButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.insertButton.ShadowDecoration.Enabled = true;
             this.insertButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.insertButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.insertButton.Size = new System.Drawing.Size(131, 38);
+            this.insertButton.Size = new System.Drawing.Size(175, 47);
             this.insertButton.TabIndex = 34;
             this.insertButton.Text = "Insert";
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
@@ -188,37 +190,37 @@
             this.dataGridview.AllowUserToDeleteRows = false;
             this.dataGridview.AllowUserToResizeColumns = false;
             this.dataGridview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
-            this.dataGridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.dataGridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridview.ColumnHeadersHeight = 19;
             this.dataGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridview.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridview.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.dataGridview.Location = new System.Drawing.Point(291, 163);
-            this.dataGridview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridview.Location = new System.Drawing.Point(388, 201);
+            this.dataGridview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridview.Name = "dataGridview";
             this.dataGridview.ReadOnly = true;
             this.dataGridview.RowHeadersVisible = false;
             this.dataGridview.RowHeadersWidth = 51;
             this.dataGridview.RowTemplate.Height = 24;
-            this.dataGridview.Size = new System.Drawing.Size(308, 281);
+            this.dataGridview.Size = new System.Drawing.Size(411, 346);
             this.dataGridview.TabIndex = 35;
             this.dataGridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Alizarin;
             this.dataGridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -251,10 +253,9 @@
             this.stockLabel.BackColor = System.Drawing.Color.Transparent;
             this.stockLabel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.stockLabel.Location = new System.Drawing.Point(68, 194);
-            this.stockLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.stockLabel.Location = new System.Drawing.Point(91, 239);
             this.stockLabel.Name = "stockLabel";
-            this.stockLabel.Size = new System.Drawing.Size(42, 22);
+            this.stockLabel.Size = new System.Drawing.Size(53, 26);
             this.stockLabel.TabIndex = 37;
             this.stockLabel.Text = "Stock";
             this.stockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,10 +267,9 @@
             this.productPriceLabel.BackColor = System.Drawing.Color.Transparent;
             this.productPriceLabel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productPriceLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.productPriceLabel.Location = new System.Drawing.Point(28, 154);
-            this.productPriceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.productPriceLabel.Location = new System.Drawing.Point(37, 190);
             this.productPriceLabel.Name = "productPriceLabel";
-            this.productPriceLabel.Size = new System.Drawing.Size(87, 22);
+            this.productPriceLabel.Size = new System.Drawing.Size(112, 26);
             this.productPriceLabel.TabIndex = 37;
             this.productPriceLabel.Text = "Product Price";
             this.productPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,10 +281,9 @@
             this.productNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.productNameLabel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productNameLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.productNameLabel.Location = new System.Drawing.Point(24, 110);
-            this.productNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.productNameLabel.Location = new System.Drawing.Point(32, 135);
             this.productNameLabel.Name = "productNameLabel";
-            this.productNameLabel.Size = new System.Drawing.Size(94, 22);
+            this.productNameLabel.Size = new System.Drawing.Size(120, 26);
             this.productNameLabel.TabIndex = 37;
             this.productNameLabel.Text = "Product Name";
             this.productNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,15 +301,15 @@
             this.updateButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.ForeColor = System.Drawing.Color.White;
             this.updateButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.updateButton.Location = new System.Drawing.Point(115, 357);
-            this.updateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateButton.Location = new System.Drawing.Point(153, 439);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateButton.Name = "updateButton";
             this.updateButton.PressedColor = System.Drawing.Color.Transparent;
             this.updateButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.updateButton.ShadowDecoration.Enabled = true;
             this.updateButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.updateButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.updateButton.Size = new System.Drawing.Size(131, 38);
+            this.updateButton.Size = new System.Drawing.Size(175, 47);
             this.updateButton.TabIndex = 39;
             this.updateButton.Text = "Update";
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
@@ -328,15 +327,15 @@
             this.deleteButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.White;
             this.deleteButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.deleteButton.Location = new System.Drawing.Point(115, 398);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteButton.Location = new System.Drawing.Point(153, 490);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.PressedColor = System.Drawing.Color.Transparent;
             this.deleteButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.deleteButton.ShadowDecoration.Enabled = true;
             this.deleteButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.deleteButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.deleteButton.Size = new System.Drawing.Size(131, 38);
+            this.deleteButton.Size = new System.Drawing.Size(175, 47);
             this.deleteButton.TabIndex = 40;
             this.deleteButton.Text = "Delete";
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -348,10 +347,9 @@
             this.categoryLabel.BackColor = System.Drawing.Color.Transparent;
             this.categoryLabel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.categoryLabel.Location = new System.Drawing.Point(50, 236);
-            this.categoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.categoryLabel.Location = new System.Drawing.Point(67, 290);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(65, 22);
+            this.categoryLabel.Size = new System.Drawing.Size(82, 26);
             this.categoryLabel.TabIndex = 37;
             this.categoryLabel.Text = "Category";
             this.categoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,14 +374,14 @@
             this.productId.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
             this.productId.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.productId.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.productId.Location = new System.Drawing.Point(72, 14);
-            this.productId.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.productId.Location = new System.Drawing.Point(96, 17);
+            this.productId.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.productId.Name = "productId";
             this.productId.PasswordChar = '\0';
             this.productId.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.productId.PlaceholderText = "";
             this.productId.SelectedText = "";
-            this.productId.Size = new System.Drawing.Size(24, 32);
+            this.productId.Size = new System.Drawing.Size(32, 39);
             this.productId.TabIndex = 29;
             this.productId.Visible = false;
             // 
@@ -394,10 +392,9 @@
             this.productIdLabel.BackColor = System.Drawing.Color.Transparent;
             this.productIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productIdLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.productIdLabel.Location = new System.Drawing.Point(11, 25);
-            this.productIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.productIdLabel.Location = new System.Drawing.Point(15, 31);
             this.productIdLabel.Name = "productIdLabel";
-            this.productIdLabel.Size = new System.Drawing.Size(56, 13);
+            this.productIdLabel.Size = new System.Drawing.Size(72, 17);
             this.productIdLabel.TabIndex = 37;
             this.productIdLabel.Text = "Product Id";
             this.productIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -416,9 +413,10 @@
             this.categoryDropdown.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.categoryDropdown.ForeColor = System.Drawing.Color.Firebrick;
             this.categoryDropdown.ItemHeight = 30;
-            this.categoryDropdown.Location = new System.Drawing.Point(107, 230);
+            this.categoryDropdown.Location = new System.Drawing.Point(143, 283);
+            this.categoryDropdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.categoryDropdown.Name = "categoryDropdown";
-            this.categoryDropdown.Size = new System.Drawing.Size(149, 36);
+            this.categoryDropdown.Size = new System.Drawing.Size(197, 36);
             this.categoryDropdown.TabIndex = 41;
             this.categoryDropdown.SelectedIndexChanged += new System.EventHandler(this.categoryDropdown_SelectedIndexChanged);
             // 
@@ -435,15 +433,15 @@
             this.viewButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewButton.ForeColor = System.Drawing.Color.White;
             this.viewButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.viewButton.Location = new System.Drawing.Point(115, 315);
-            this.viewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewButton.Location = new System.Drawing.Point(153, 388);
+            this.viewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewButton.Name = "viewButton";
             this.viewButton.PressedColor = System.Drawing.Color.Transparent;
             this.viewButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.viewButton.ShadowDecoration.Enabled = true;
             this.viewButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.viewButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.viewButton.Size = new System.Drawing.Size(131, 38);
+            this.viewButton.Size = new System.Drawing.Size(175, 47);
             this.viewButton.TabIndex = 42;
             this.viewButton.Text = "View";
             this.viewButton.Click += new System.EventHandler(this.viewButton_Click);
@@ -455,10 +453,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(287, 106);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(383, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 22);
+            this.label5.Size = new System.Drawing.Size(65, 26);
             this.label5.TabIndex = 44;
             this.label5.Text = "Search";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,25 +480,25 @@
             this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
             this.searchBox.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.searchBox.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.searchBox.Location = new System.Drawing.Point(341, 100);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.searchBox.Location = new System.Drawing.Point(455, 123);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchBox.Name = "searchBox";
             this.searchBox.PasswordChar = '\0';
             this.searchBox.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.searchBox.PlaceholderText = "";
             this.searchBox.SelectedText = "";
-            this.searchBox.Size = new System.Drawing.Size(258, 32);
+            this.searchBox.Size = new System.Drawing.Size(344, 39);
             this.searchBox.TabIndex = 43;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // ProductsManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(626, 473);
+            this.ClientSize = new System.Drawing.Size(835, 582);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.viewButton);
@@ -522,6 +519,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductsManagement";
             this.Text = "ProductsManagement";
             this.Load += new System.EventHandler(this.ProductsManagement_Load);
