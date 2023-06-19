@@ -375,6 +375,12 @@
     <Compile Include="AdminView.designer.cs">
       <DependentUpon>AdminView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CashierAddQty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashierAddQty.Designer.cs">
+      <DependentUpon>CashierAddQty.cs</DependentUpon>
+    </Compile>
     <Compile Include="CashierDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,6 +398,18 @@
     </Compile>
     <Compile Include="CashierManagement.designer.cs">
       <DependentUpon>CashierManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashierPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashierPay.Designer.cs">
+      <DependentUpon>CashierPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashierScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashierScreen.Designer.cs">
+      <DependentUpon>CashierScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="CategoryDetails.cs">
       <SubType>Form</SubType>
@@ -482,6 +500,9 @@
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CashierAddQty.resx">
+      <DependentUpon>CashierAddQty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CashierDetails.resx">
       <DependentUpon>CashierDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +511,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CashierManagement.resx">
       <DependentUpon>CashierManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierPay.resx">
+      <DependentUpon>CashierPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierScreen.resx">
+      <DependentUpon>CashierScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryDetails.resx">
       <DependentUpon>CategoryDetails.cs</DependentUpon>
