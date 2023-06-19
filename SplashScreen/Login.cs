@@ -277,12 +277,12 @@ namespace SplashScreen
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-                    SqlDataAdapter sda2 = new SqlDataAdapter("select count (*), role, user_id from usersTable where username='" + usernameField.Text + "' and password='" + passwordField.Text + "' group by role, user_id", con.getConnection());
+                    SqlDataAdapter sda2 = new SqlDataAdapter("select count (*), role, user_id, status from usersTable where username='" + usernameField.Text + "' and password='" + passwordField.Text + "' group by role, user_id, status", con.getConnection());
                     DataTable dt2 = new DataTable();
                     sda2.Fill(dt2);
                     if (dt2.Rows[0][0].ToString() == "1")
                     {
-                        if (dt2.Rows[0][1].ToString() == "Adminstrator")
+                        if (dt2.Rows[0][1].ToString() == "Administrator")
                         {
                             Form1 form1 = new Form1(username: usernameField.Text);
                             this.Hide();
@@ -290,9 +290,17 @@ namespace SplashScreen
                         }
                         else
                         {
-                            CashierScreen cashierScreen = new CashierScreen(username: usernameField.Text, userId: dt2.Rows[0][2].ToString());
-                            this.Hide();
-                            cashierScreen.Show();
+                            if (dt2.Rows[0][3].ToString() == "Active")
+                            {
+                                CashierScreen cashierScreen = new CashierScreen(username: usernameField.Text, userId: dt2.Rows[0][2].ToString());
+                                this.Hide();
+                                cashierScreen.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Your account is inactive. Please contact the administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            
                         }
                         
                     }
