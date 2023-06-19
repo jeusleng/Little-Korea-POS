@@ -66,6 +66,9 @@ namespace SplashScreen
         private void CategoryManagement_Load(object sender, EventArgs e)
         {
             populate();
+            dataGridview.DefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+            dataGridview.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -232,6 +235,14 @@ namespace SplashScreen
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             searchCategory(searchBox.Text);
+        }
+
+        private void categoryName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
         }
     }
 }

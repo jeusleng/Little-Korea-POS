@@ -71,6 +71,8 @@ namespace SplashScreen
         private void CashierManagement_Load(object sender, EventArgs e)
         {
             populate();
+            dataGridview.DefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+            dataGridview.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -102,61 +104,26 @@ namespace SplashScreen
 
         private void insertButton_Click(object sender, EventArgs e)
         {
+            AddCashierScreen addCashierScreen = new AddCashierScreen();
 
-            try
-            {
-                if (firstName.Text == string.Empty || lastName.Text == string.Empty || contactNum.Text == string.Empty || birthday.Text == string.Empty || dateHired.Text == string.Empty || salary.Text == string.Empty)
-                {
-                    MessageBox.Show("Please fill out all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    string password = GeneratePassword(8);
-                    dbCon.openConnection();
-                    //insert cashier account in userTable
-                    string query1 = "insert into usersTable values('" + firstName.Text + "', '" + password + "', 'Cashier', 'Active')";
-                    SqlCommand cmd1 = new SqlCommand(query1, dbCon.getConnection());
+            // Subscribe to the CashierAdded event
+            addCashierScreen.CashierAdded += AddCashierScreen_CashierAdded;
 
-                    cmd1.ExecuteNonQuery();
+            // Make the background below the new form darker
+            this.Enabled = false;
 
-                    int userId = 0;
+            // Display the CashierDetailsScreen form as a modal dialog
+            addCashierScreen.ShowDialog();
 
-                    //select the user_id of new cashier
-                    string query2 = "select user_id from usersTable where username = '" + firstName.Text + "' ";
-                    SqlCommand cmd2 = new SqlCommand(query2, dbCon.getConnection());
-
-                    using (SqlDataReader reader = cmd2.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            userId = reader.GetInt32(0);
-                        }
-                    }
-
-                    //insert the cashier information and user_id
-                    string query3 = "insert into cashierTable values('" + firstName.Text + "', '" + lastName.Text + "', '" + contactNum.Text + "', '" + birthday.Text + "', '" + dateHired.Text + "', '" + salary.Text + "', '" + userId + "')";
-                    SqlCommand cmd3 = new SqlCommand(query3, dbCon.getConnection());
-
-                    cmd3.ExecuteNonQuery();
-
-                    MessageBox.Show("Cashier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    dbCon.closeConnection();
-                    populate();
-
-                    firstName.Text = "";
-                    lastName.Text = "";
-                    contactNum.Text = "";
-                    birthday.Text = "";
-                    dateHired.Text = "";
-                    salary.Text = "";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            // Re-enable the background form after the CashierDetailsScreen form is closed
+            this.Enabled = true;
         }
+
+        private void AddCashierScreen_CashierAdded(object sender, EventArgs e)
+        {
+            populate(); // Refresh the DataGridView when a cashier is added
+        }
+
 
         private void dataGridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -252,12 +219,36 @@ namespace SplashScreen
                 string contactNumber = row.Cells["contact_no"].Value.ToString();
                 string birthday = row.Cells["birthday"].Value.ToString();
                 string dateHired = row.Cells["date_hired"].Value.ToString();
+                string cashierId = row.Cells["cashier_id"].Value.ToString();
                 decimal salary = decimal.Parse(row.Cells["salary"].Value.ToString());
-                CashierDetails detailsForm = new CashierDetails(firstName, lastName, contactNumber, birthday, dateHired, salary);
-                detailsForm.ShowDialog();
-            }
 
+                CashierDetailsScreen cashierDetailsScreen = new CashierDetailsScreen();
+
+                // Pass the values to the CashierDetailsScreen form
+                cashierDetailsScreen.FirstName = firstName;
+                cashierDetailsScreen.LastName = lastName;
+                cashierDetailsScreen.ContactNumber = contactNumber;
+                cashierDetailsScreen.Birthday = birthday;
+                cashierDetailsScreen.DateHired = dateHired;
+                cashierDetailsScreen.Salary = salary;
+                cashierDetailsScreen.CashierId = cashierId;
+
+                // Make the background below the new form darker
+                this.Enabled = false;
+
+                // Display the CashierDetailsScreen form as a modal dialog
+                cashierDetailsScreen.ShowDialog();
+
+                // Re-enable the background form after the CashierDetailsScreen form is closed
+                this.Enabled = true;
+
+                // Refresh the data grid view after closing the CashierDetailsScreen form
+                populate();
+            }
         }
+
+
+
         public void searchCashier(String searchValue)
         {
             try
@@ -373,6 +364,11 @@ namespace SplashScreen
             {
                 e.Handled = true; // Cancels the keypress event
             }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

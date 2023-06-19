@@ -139,6 +139,7 @@ namespace SplashScreen
             this.passwordField.Size = new System.Drawing.Size(329, 63);
             this.passwordField.TabIndex = 4;
             this.passwordField.TextChanged += new System.EventHandler(this.passwordField_TextChanged);
+            this.passwordField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordField_KeyDown);
             // 
             // label1
             // 

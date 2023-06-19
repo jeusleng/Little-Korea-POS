@@ -13,10 +13,24 @@ namespace SplashScreenLadera
 {
     public partial class AccountManagement : Form
     {
+
+        private CashierDetailsScreen cashierDetailsScreen;
+
         public AccountManagement()
         {
             InitializeComponent();
-            
+
+            cashierDetailsScreen = new CashierDetailsScreen();
+            cashierDetailsScreen.CashierUpdated += CashierDetailsScreen_CashierUpdated;
+
+
+        }
+
+        // Event handler for the CashierUpdated event
+        private void CashierDetailsScreen_CashierUpdated(object sender, EventArgs e)
+        {
+            // Refresh the data grid view
+            populate();
         }
 
         Connection dbCon = new Connection();
@@ -67,6 +81,9 @@ namespace SplashScreenLadera
             dataGridview.CellClick += dataGridview_CellClick;
             dataGridview.CellBeginEdit += dataGridview_CellBeginEdit;
             dataGridview.CellEndEdit += dataGridview_CellEndEdit;
+            dataGridview.DefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+            dataGridview.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+            
         }
 
         private void dataGridview_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -148,7 +165,7 @@ namespace SplashScreenLadera
 
         }
 
-        
+
 
         private void dataGridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -186,7 +203,7 @@ namespace SplashScreenLadera
                 }
                 dbCon.closeConnection();
             }
-            
+
 
             catch (Exception ex)
             {
@@ -255,3 +272,4 @@ namespace SplashScreenLadera
 
     }
 }
+
