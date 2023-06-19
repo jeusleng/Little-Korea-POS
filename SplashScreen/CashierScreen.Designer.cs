@@ -97,7 +97,7 @@
             this.productGridview.DefaultCellStyle = dataGridViewCellStyle3;
             this.productGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
             this.productGridview.Location = new System.Drawing.Point(30, 120);
-            this.productGridview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productGridview.Margin = new System.Windows.Forms.Padding(4);
             this.productGridview.Name = "productGridview";
             this.productGridview.ReadOnly = true;
             this.productGridview.RowHeadersVisible = false;
@@ -147,16 +147,16 @@
             this.temptransactionGridview.ColumnHeadersHeight = 22;
             this.temptransactionGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.temptransactionGridview.DefaultCellStyle = dataGridViewCellStyle6;
             this.temptransactionGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
             this.temptransactionGridview.Location = new System.Drawing.Point(507, 120);
-            this.temptransactionGridview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.temptransactionGridview.Margin = new System.Windows.Forms.Padding(4);
             this.temptransactionGridview.Name = "temptransactionGridview";
             this.temptransactionGridview.ReadOnly = true;
             this.temptransactionGridview.RowHeadersVisible = false;
@@ -239,7 +239,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.ForeColor = System.Drawing.Color.Maroon;
             this.label8.Location = new System.Drawing.Point(63, 439);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 25);
@@ -283,7 +283,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(62, 485);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 25);
@@ -327,7 +327,7 @@
             this.cashierNameLabel.AutoSize = true;
             this.cashierNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.cashierNameLabel.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierNameLabel.ForeColor = System.Drawing.Color.White;
+            this.cashierNameLabel.ForeColor = System.Drawing.Color.Maroon;
             this.cashierNameLabel.Location = new System.Drawing.Point(62, 543);
             this.cashierNameLabel.Name = "cashierNameLabel";
             this.cashierNameLabel.Size = new System.Drawing.Size(76, 25);
@@ -746,7 +746,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(909, 40);
+            this.label1.Location = new System.Drawing.Point(47, 744);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 81;
@@ -773,8 +773,8 @@
             this.datetime.AutoSize = true;
             this.datetime.BackColor = System.Drawing.Color.Transparent;
             this.datetime.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datetime.ForeColor = System.Drawing.Color.White;
-            this.datetime.Location = new System.Drawing.Point(58, 728);
+            this.datetime.ForeColor = System.Drawing.Color.Maroon;
+            this.datetime.Location = new System.Drawing.Point(834, 25);
             this.datetime.Name = "datetime";
             this.datetime.Size = new System.Drawing.Size(154, 49);
             this.datetime.TabIndex = 83;
@@ -849,7 +849,7 @@
             this.Controls.Add(this.temptransactionGridview);
             this.Controls.Add(this.productGridview);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CashierScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CashierScreen";
