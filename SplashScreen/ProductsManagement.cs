@@ -109,6 +109,9 @@ namespace SplashScreen
         {
             populate();
             bindcomboBox();
+            dataGridview.DefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+            dataGridview.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -159,10 +162,11 @@ namespace SplashScreen
 
                     int categoryId = Convert.ToInt32(selectedItem.Value);
                     dbCon.openConnection();
+
                     string query = "INSERT INTO productsTable (product_name, product_price, stock, category_id) VALUES (@productName, @productPrice, @stock, @categoryId)";
                     SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
                     cmd.Parameters.AddWithValue("@productName", productName.Text);
-                    cmd.Parameters.AddWithValue("@productPrice", price);
+                    cmd.Parameters.Add("@productPrice", SqlDbType.Decimal).Value = price;
                     cmd.Parameters.AddWithValue("@stock", stockQuantity);
                     cmd.Parameters.AddWithValue("@categoryId", categoryId);
 
@@ -184,6 +188,7 @@ namespace SplashScreen
                 MessageBox.Show(ex.Message);
             }
         }
+
 
 
 
@@ -370,10 +375,16 @@ namespace SplashScreen
 
         private void productPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow only numeric digits, decimal point, backspace, and delete key
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            // Check if the pressed key is a digit, decimal point, or control key
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
             {
-                e.Handled = true; // Cancel the keypress event
+                e.Handled = true; // Ignore the key press
+            }
+
+            // Allow only one decimal point
+            if (e.KeyChar == '.' && ((Guna2TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true; // Ignore the key press
             }
         }
 
@@ -381,6 +392,14 @@ namespace SplashScreen
         private void stock_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+        }
+
+        private void productName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Cancels the keypress event
             }

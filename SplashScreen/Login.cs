@@ -73,12 +73,34 @@ namespace SplashScreen
                 con.openConnection();
                 SqlCommand cmd = con.createCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into usersTable values('"+usernameField.Text+"', '"+passwordField.Text+"')";
-                cmd.ExecuteNonQuery();
-                con.closeConnection();
+                cmd.CommandText = "SELECT * FROM usersTable WHERE username = @username and status = 'Active'";
+                cmd.Parameters.AddWithValue("@username", usernameField.Text);
 
-                MessageBox.Show("Record inserted successfully!");
-                display_users();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    string status = reader["status"].ToString();
+
+                    if (status == "Active")
+                    {
+                        // Proceed with login
+                        Form1 form1 = new Form1(username: usernameField.Text);
+                        this.Hide();
+                        form1.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account is inactive. Please contact the administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username. Please try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                con.closeConnection();
             }
             catch (Exception ex)
             {
@@ -86,32 +108,12 @@ namespace SplashScreen
             }
         }
 
+
+
+
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            //ORIGINAL CODE
-            //try
-            //{
-            //    if (string.IsNullOrEmpty(usernameField.Text) || string.IsNullOrEmpty(passwordField.Text))
-            //    {
-            //        MessageBox.Show("Please enter both username and password.");
-            //        return;
-            //    }
-
-            //    con.Open();
-            //    SqlCommand cmd = con.CreateCommand();
-            //    cmd.CommandType = CommandType.Text;
-            //    cmd.CommandText = "delete from usersTable where username='"+usernameField.Text+"'";
-            //    cmd.ExecuteNonQuery();
-            //    con.Close();
-
-            //    MessageBox.Show("Record deleted successfully!");
-            //    display_users();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
+           
             //CODE NI SIR
             if(usernameField.Text == string.Empty)
             {
@@ -222,43 +224,7 @@ namespace SplashScreen
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            //ORIGINAL CODE
-            //try
-            //{
-            //    if (string.IsNullOrEmpty(usernameField.Text) || string.IsNullOrEmpty(passwordField.Text))
-            //    {
-            //        MessageBox.Show("Please enter both username and password.");
-            //        return;
-            //    }
-
-            //    con.Open();
-            //    SqlCommand cmd = con.CreateCommand();
-            //    cmd.CommandType = CommandType.Text;
-            //    cmd.CommandText = "select * from usersTable where username='" + usernameField.Text + "' and password='" + passwordField.Text + "'";
-            //    SqlDataReader reader = cmd.ExecuteReader();
-
-            //    if (reader.HasRows)
-            //    {
-
-            //        reader.Close();
-            //        con.Close();
-            //        MessageBox.Show("Correct credentials", "CORRECT", MessageBoxButtons.OK);
-
-            //        SplashScreenLadera.HomePage loginPage = new SplashScreenLadera.HomePage();
-            //        this.Hide();
-            //        loginPage.Show();
-            //    }
-            //    else
-            //    {
-            //        reader.Close();
-            //        con.Close();
-            //        MessageBox.Show("Your username or password is incorrect.", "Incorrect Credentials", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            
 
             //CODE NI SIR
             if (usernameField.Text == string.Empty)
@@ -360,6 +326,12 @@ namespace SplashScreen
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             searching(searchBox.Text);
+        }
+
+        private void passwordField_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+
         }
     }
 }

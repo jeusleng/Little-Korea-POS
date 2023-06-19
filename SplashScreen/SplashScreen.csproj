@@ -363,6 +363,12 @@
     <Compile Include="AccountManagement.Designer.cs">
       <DependentUpon>AccountManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCashierScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCashierScreen.Designer.cs">
+      <DependentUpon>AddCashierScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,12 @@
     </Compile>
     <Compile Include="CashierDetails.Designer.cs">
       <DependentUpon>CashierDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashierDetailsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashierDetailsScreen.Designer.cs">
+      <DependentUpon>CashierDetailsScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="CashierManagement.cs">
       <SubType>Form</SubType>
@@ -488,6 +500,9 @@
     <EmbeddedResource Include="AccountManagement.resx">
       <DependentUpon>AccountManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddCashierScreen.resx">
+      <DependentUpon>AddCashierScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CashierDetails.resx">
       <DependentUpon>CashierDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierDetailsScreen.resx">
+      <DependentUpon>CashierDetailsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CashierManagement.resx">
       <DependentUpon>CashierManagement.cs</DependentUpon>

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierManagement));
             this.label1 = new System.Windows.Forms.Label();
             this.contactNum = new Guna.UI2.WinForms.Guna2TextBox();
@@ -71,6 +71,7 @@
             this.label1.Size = new System.Drawing.Size(478, 70);
             this.label1.TabIndex = 28;
             this.label1.Text = "Cashier Management";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // contactNum
             // 
@@ -91,7 +92,7 @@
             this.contactNum.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
             this.contactNum.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.contactNum.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.contactNum.Location = new System.Drawing.Point(163, 239);
+            this.contactNum.Location = new System.Drawing.Point(514, 646);
             this.contactNum.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.contactNum.Name = "contactNum";
             this.contactNum.PasswordChar = '\0';
@@ -100,6 +101,7 @@
             this.contactNum.SelectedText = "";
             this.contactNum.Size = new System.Drawing.Size(199, 39);
             this.contactNum.TabIndex = 29;
+            this.contactNum.Visible = false;
             this.contactNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contactNum_KeyPress);
             // 
             // insertButton
@@ -115,7 +117,7 @@
             this.insertButton.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insertButton.ForeColor = System.Drawing.Color.White;
             this.insertButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.insertButton.Location = new System.Drawing.Point(21, 453);
+            this.insertButton.Location = new System.Drawing.Point(324, 503);
             this.insertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.insertButton.Name = "insertButton";
             this.insertButton.PressedColor = System.Drawing.Color.Transparent;
@@ -125,50 +127,50 @@
             this.insertButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
             this.insertButton.Size = new System.Drawing.Size(175, 47);
             this.insertButton.TabIndex = 34;
-            this.insertButton.Text = "Insert";
+            this.insertButton.Text = "Add";
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // dataGridview
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
-            this.dataGridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.dataGridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridview.ColumnHeadersHeight = 19;
             this.dataGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridview.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridview.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.dataGridview.Location = new System.Drawing.Point(381, 198);
+            this.dataGridview.Location = new System.Drawing.Point(58, 176);
             this.dataGridview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridview.Name = "dataGridview";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridview.RowHeadersVisible = false;
             this.dataGridview.RowHeadersWidth = 51;
             this.dataGridview.RowTemplate.Height = 24;
-            this.dataGridview.Size = new System.Drawing.Size(424, 352);
+            this.dataGridview.Size = new System.Drawing.Size(742, 259);
             this.dataGridview.TabIndex = 35;
             this.dataGridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Alizarin;
             this.dataGridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -187,7 +189,7 @@
             this.dataGridview.ThemeStyle.ReadOnly = false;
             this.dataGridview.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.dataGridview.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridview.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridview.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridview.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridview.ThemeStyle.RowsStyle.Height = 24;
             this.dataGridview.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
@@ -201,12 +203,13 @@
             this.cashierNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.cashierNameLabel.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierNameLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.cashierNameLabel.Location = new System.Drawing.Point(36, 247);
+            this.cashierNameLabel.Location = new System.Drawing.Point(387, 654);
             this.cashierNameLabel.Name = "cashierNameLabel";
             this.cashierNameLabel.Size = new System.Drawing.Size(94, 25);
             this.cashierNameLabel.TabIndex = 37;
             this.cashierNameLabel.Text = "Contact No.";
             this.cashierNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cashierNameLabel.Visible = false;
             // 
             // updateButton
             // 
@@ -221,7 +224,7 @@
             this.updateButton.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.ForeColor = System.Drawing.Color.White;
             this.updateButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.updateButton.Location = new System.Drawing.Point(201, 452);
+            this.updateButton.Location = new System.Drawing.Point(21, 503);
             this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateButton.Name = "updateButton";
             this.updateButton.PressedColor = System.Drawing.Color.Transparent;
@@ -232,6 +235,7 @@
             this.updateButton.Size = new System.Drawing.Size(175, 47);
             this.updateButton.TabIndex = 39;
             this.updateButton.Text = "Update";
+            this.updateButton.Visible = false;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // deleteButton
@@ -247,7 +251,7 @@
             this.deleteButton.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.White;
             this.deleteButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.deleteButton.Location = new System.Drawing.Point(201, 503);
+            this.deleteButton.Location = new System.Drawing.Point(21, 549);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.PressedColor = System.Drawing.Color.Transparent;
@@ -258,6 +262,7 @@
             this.deleteButton.Size = new System.Drawing.Size(175, 47);
             this.deleteButton.TabIndex = 40;
             this.deleteButton.Text = "Delete";
+            this.deleteButton.Visible = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // cashierId
@@ -319,7 +324,7 @@
             this.viewDetailsButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewDetailsButton.ForeColor = System.Drawing.Color.White;
             this.viewDetailsButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.viewDetailsButton.Location = new System.Drawing.Point(21, 503);
+            this.viewDetailsButton.Location = new System.Drawing.Point(324, 449);
             this.viewDetailsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewDetailsButton.Name = "viewDetailsButton";
             this.viewDetailsButton.PressedColor = System.Drawing.Color.Transparent;
@@ -339,7 +344,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(395, 135);
+            this.label5.Location = new System.Drawing.Point(389, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 26);
             this.label5.TabIndex = 45;
@@ -366,7 +371,7 @@
             this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
             this.searchBox.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.searchBox.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.searchBox.Location = new System.Drawing.Point(481, 126);
+            this.searchBox.Location = new System.Drawing.Point(475, 110);
             this.searchBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchBox.Name = "searchBox";
             this.searchBox.PasswordChar = '\0';
@@ -384,12 +389,13 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(36, 197);
+            this.label2.Location = new System.Drawing.Point(387, 604);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 25);
             this.label2.TabIndex = 47;
             this.label2.Text = "Last Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Visible = false;
             // 
             // lastName
             // 
@@ -410,7 +416,7 @@
             this.lastName.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
             this.lastName.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.lastName.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.lastName.Location = new System.Drawing.Point(163, 188);
+            this.lastName.Location = new System.Drawing.Point(514, 595);
             this.lastName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.lastName.Name = "lastName";
             this.lastName.PasswordChar = '\0';
@@ -419,6 +425,7 @@
             this.lastName.SelectedText = "";
             this.lastName.Size = new System.Drawing.Size(199, 39);
             this.lastName.TabIndex = 46;
+            this.lastName.Visible = false;
             this.lastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lastName_KeyPress);
             // 
             // label3
@@ -428,12 +435,13 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(37, 296);
+            this.label3.Location = new System.Drawing.Point(388, 703);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Birthday";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Visible = false;
             // 
             // label4
             // 
@@ -442,12 +450,13 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(36, 347);
+            this.label4.Location = new System.Drawing.Point(387, 754);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 25);
             this.label4.TabIndex = 51;
             this.label4.Text = "Date Hired";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Visible = false;
             // 
             // label6
             // 
@@ -456,12 +465,13 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(36, 402);
+            this.label6.Location = new System.Drawing.Point(387, 809);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 25);
             this.label6.TabIndex = 53;
             this.label6.Text = "Salary";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Visible = false;
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // salary
@@ -483,7 +493,7 @@
             this.salary.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
             this.salary.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.salary.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.salary.Location = new System.Drawing.Point(163, 394);
+            this.salary.Location = new System.Drawing.Point(514, 801);
             this.salary.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.salary.Name = "salary";
             this.salary.PasswordChar = '\0';
@@ -492,6 +502,7 @@
             this.salary.SelectedText = "";
             this.salary.Size = new System.Drawing.Size(199, 39);
             this.salary.TabIndex = 52;
+            this.salary.Visible = false;
             this.salary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.salary_KeyPress);
             // 
             // label8
@@ -501,12 +512,13 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(36, 150);
+            this.label8.Location = new System.Drawing.Point(387, 557);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 25);
             this.label8.TabIndex = 57;
             this.label8.Text = "First Name";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Visible = false;
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // firstName
@@ -528,7 +540,7 @@
             this.firstName.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
             this.firstName.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.firstName.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.firstName.Location = new System.Drawing.Point(163, 142);
+            this.firstName.Location = new System.Drawing.Point(514, 549);
             this.firstName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.firstName.Name = "firstName";
             this.firstName.PasswordChar = '\0';
@@ -537,6 +549,7 @@
             this.firstName.SelectedText = "";
             this.firstName.Size = new System.Drawing.Size(199, 39);
             this.firstName.TabIndex = 56;
+            this.firstName.Visible = false;
             this.firstName.TextChanged += new System.EventHandler(this.firstName_TextChanged);
             this.firstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.firstName_KeyPress);
             // 
@@ -559,7 +572,7 @@
             this.dateHired.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
             this.dateHired.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.dateHired.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.dateHired.Location = new System.Drawing.Point(163, 342);
+            this.dateHired.Location = new System.Drawing.Point(514, 749);
             this.dateHired.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dateHired.Name = "dateHired";
             this.dateHired.PasswordChar = '\0';
@@ -568,6 +581,7 @@
             this.dateHired.SelectedText = "";
             this.dateHired.Size = new System.Drawing.Size(199, 39);
             this.dateHired.TabIndex = 58;
+            this.dateHired.Visible = false;
             // 
             // birthday
             // 
@@ -588,7 +602,7 @@
             this.birthday.HoverState.FillColor = System.Drawing.Color.AntiqueWhite;
             this.birthday.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.birthday.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.birthday.Location = new System.Drawing.Point(163, 291);
+            this.birthday.Location = new System.Drawing.Point(514, 698);
             this.birthday.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.birthday.Name = "birthday";
             this.birthday.PasswordChar = '\0';
@@ -597,6 +611,7 @@
             this.birthday.SelectedText = "";
             this.birthday.Size = new System.Drawing.Size(199, 39);
             this.birthday.TabIndex = 59;
+            this.birthday.Visible = false;
             // 
             // label7
             // 
@@ -605,12 +620,13 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Poppins", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(38, 315);
+            this.label7.Location = new System.Drawing.Point(389, 722);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 16);
             this.label7.TabIndex = 60;
             this.label7.Text = "(mm/dd/yyyy)";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Visible = false;
             // 
             // label9
             // 
@@ -619,12 +635,13 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Poppins", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(39, 366);
+            this.label9.Location = new System.Drawing.Point(390, 773);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 16);
             this.label9.TabIndex = 61;
             this.label9.Text = "(mm/dd/yyyy)";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label9.Visible = false;
             // 
             // CashierManagement
             // 
