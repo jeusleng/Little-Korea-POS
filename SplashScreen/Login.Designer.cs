@@ -241,14 +241,14 @@ namespace SplashScreen
             this.login.Font = new System.Drawing.Font("Poppins", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.ForeColor = System.Drawing.Color.White;
             this.login.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.login.Location = new System.Drawing.Point(189, 471);
+            this.login.Location = new System.Drawing.Point(169, 466);
             this.login.Name = "login";
             this.login.ShadowDecoration.Enabled = true;
             this.login.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.login.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.login.Size = new System.Drawing.Size(116, 33);
+            this.login.Size = new System.Drawing.Size(154, 45);
             this.login.TabIndex = 14;
-            this.login.Text = "Login";
+            this.login.Text = "LOGIN";
             this.login.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // sampleDatabaseDataSet

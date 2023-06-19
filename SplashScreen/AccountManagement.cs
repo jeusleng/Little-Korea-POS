@@ -20,6 +20,7 @@ namespace SplashScreenLadera
         }
 
         Connection dbCon = new Connection();
+        private bool isComboBoxEditingControlShown;
 
         private void populate()
         {
@@ -44,24 +45,73 @@ namespace SplashScreenLadera
                 dataGridview.DataSource = dataTable;
                 dataGridview.Columns.Add(statusColumn);
 
+                // Customize header titles
+                dataGridview.Columns["user_id"].HeaderText = "No";
+                dataGridview.Columns["username"].HeaderText = "Username";
+                dataGridview.Columns["password"].HeaderText = "Password";
+                dataGridview.Columns["role"].HeaderText = "Role";
 
                 dbCon.closeConnection();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-
 
         private void AccountManagement_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'usersTable._usersTable' table. You can move, or remove it, as needed.
             this.usersTableTableAdapter.Fill(this.usersTable._usersTable);
             populate();
+            dataGridview.CellClick += dataGridview_CellClick;
+            dataGridview.CellBeginEdit += dataGridview_CellBeginEdit;
+            dataGridview.CellEndEdit += dataGridview_CellEndEdit;
         }
+
+        private void dataGridview_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                var column = dataGridview.Columns[e.ColumnIndex];
+                if (column is DataGridViewComboBoxColumn && !isComboBoxEditingControlShown)
+                {
+                    isComboBoxEditingControlShown = true;
+                    dataGridview.BeginEdit(true);
+                    var editingControl = dataGridview.EditingControl as DataGridViewComboBoxEditingControl;
+                    editingControl.DroppedDown = true;
+                }
+            }
+        }
+
+        private void dataGridview_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                var column = dataGridview.Columns[e.ColumnIndex];
+                if (column is DataGridViewComboBoxColumn)
+                {
+                    isComboBoxEditingControlShown = true;
+                }
+            }
+        }
+
+        private void dataGridview_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                var column = dataGridview.Columns[e.ColumnIndex];
+                if (column is DataGridViewComboBoxColumn)
+                {
+                    isComboBoxEditingControlShown = false;
+                }
+            }
+        }
+
+
+
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -166,5 +216,42 @@ namespace SplashScreenLadera
         {
 
         }
+
+        private void AccountManagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridview.SelectedCells.Count > 0)
+            {
+                int rowIndex = dataGridview.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridview.Rows[rowIndex];
+                string userId = selectedRow.Cells["user_id"].Value.ToString();
+                string status = selectedRow.Cells["Status"].FormattedValue.ToString();
+
+                try
+                {
+                    dbCon.openConnection();
+                    string query = "UPDATE usersTable SET Status = @status WHERE user_id = @userId";
+                    SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Status updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dbCon.closeConnection();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a user to update the status.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

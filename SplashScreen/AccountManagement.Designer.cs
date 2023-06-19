@@ -39,13 +39,14 @@ namespace SplashScreenLadera
             this.viewButton = new Guna.UI2.WinForms.Guna2Button();
             this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.usersTable = new SplashScreenLadera.usersTable();
-            this.usersTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableTableAdapter = new SplashScreenLadera.usersTableTableAdapters.usersTableTableAdapter();
             this.roleField = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordField = new Guna.UI2.WinForms.Guna2TextBox();
             this.usernameField = new Guna.UI2.WinForms.Guna2TextBox();
             this.idField = new Guna.UI2.WinForms.Guna2TextBox();
+            this.updateButton = new Guna.UI2.WinForms.Guna2Button();
+            this.usersTable = new SplashScreenLadera.usersTable();
+            this.usersTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableTableAdapter = new SplashScreenLadera.usersTableTableAdapters.usersTableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersTableBindingSource)).BeginInit();
@@ -57,10 +58,9 @@ namespace SplashScreenLadera
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(148, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(197, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(402, 56);
+            this.label1.Size = new System.Drawing.Size(490, 70);
             this.label1.TabIndex = 27;
             this.label1.Text = "Account Management";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -95,13 +95,13 @@ namespace SplashScreenLadera
             this.dataGridview.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.dataGridview.Location = new System.Drawing.Point(240, 152);
-            this.dataGridview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridview.Location = new System.Drawing.Point(32, 183);
+            this.dataGridview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridview.Name = "dataGridview";
             this.dataGridview.RowHeadersVisible = false;
             this.dataGridview.RowHeadersWidth = 51;
             this.dataGridview.RowTemplate.Height = 24;
-            this.dataGridview.Size = new System.Drawing.Size(362, 258);
+            this.dataGridview.Size = new System.Drawing.Size(742, 284);
             this.dataGridview.TabIndex = 32;
             this.dataGridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Alizarin;
             this.dataGridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -140,17 +140,18 @@ namespace SplashScreenLadera
             this.viewButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewButton.ForeColor = System.Drawing.Color.White;
             this.viewButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.viewButton.Location = new System.Drawing.Point(92, 278);
-            this.viewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewButton.Location = new System.Drawing.Point(56, 389);
+            this.viewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewButton.Name = "viewButton";
             this.viewButton.PressedColor = System.Drawing.Color.Transparent;
             this.viewButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.viewButton.ShadowDecoration.Enabled = true;
             this.viewButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.viewButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.viewButton.Size = new System.Drawing.Size(131, 38);
+            this.viewButton.Size = new System.Drawing.Size(175, 47);
             this.viewButton.TabIndex = 35;
             this.viewButton.Text = "View";
+            this.viewButton.Visible = false;
             this.viewButton.Click += new System.EventHandler(this.viewButton_Click);
             // 
             // searchBox
@@ -173,14 +174,14 @@ namespace SplashScreenLadera
             this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
             this.searchBox.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.searchBox.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.searchBox.Location = new System.Drawing.Point(364, 88);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.searchBox.Location = new System.Drawing.Point(123, 106);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchBox.Name = "searchBox";
             this.searchBox.PasswordChar = '\0';
             this.searchBox.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.searchBox.PlaceholderText = "";
             this.searchBox.SelectedText = "";
-            this.searchBox.Size = new System.Drawing.Size(218, 32);
+            this.searchBox.Size = new System.Drawing.Size(291, 39);
             this.searchBox.TabIndex = 37;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -191,28 +192,13 @@ namespace SplashScreenLadera
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(292, 93);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(34, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 22);
+            this.label5.Size = new System.Drawing.Size(65, 26);
             this.label5.TabIndex = 38;
             this.label5.Text = "Search";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // usersTable
-            // 
-            this.usersTable.DataSetName = "usersTable";
-            this.usersTable.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersTableBindingSource
-            // 
-            this.usersTableBindingSource.DataMember = "usersTable";
-            this.usersTableBindingSource.DataSource = this.usersTable;
-            // 
-            // usersTableTableAdapter
-            // 
-            this.usersTableTableAdapter.ClearBeforeFill = true;
             // 
             // roleField
             // 
@@ -234,14 +220,14 @@ namespace SplashScreenLadera
             this.roleField.IconLeft = ((System.Drawing.Image)(resources.GetObject("roleField.IconLeft")));
             this.roleField.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.roleField.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.roleField.Location = new System.Drawing.Point(86, 177);
-            this.roleField.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.roleField.Location = new System.Drawing.Point(32, 188);
+            this.roleField.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.roleField.Name = "roleField";
             this.roleField.PasswordChar = '\0';
             this.roleField.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.roleField.PlaceholderText = "";
             this.roleField.SelectedText = "";
-            this.roleField.Size = new System.Drawing.Size(149, 32);
+            this.roleField.Size = new System.Drawing.Size(199, 39);
             this.roleField.TabIndex = 30;
             this.roleField.Visible = false;
             // 
@@ -265,14 +251,14 @@ namespace SplashScreenLadera
             this.passwordField.IconLeft = ((System.Drawing.Image)(resources.GetObject("passwordField.IconLeft")));
             this.passwordField.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.passwordField.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.passwordField.Location = new System.Drawing.Point(86, 135);
-            this.passwordField.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.passwordField.Location = new System.Drawing.Point(56, 500);
+            this.passwordField.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.passwordField.Name = "passwordField";
             this.passwordField.PasswordChar = '\0';
             this.passwordField.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.passwordField.PlaceholderText = "";
             this.passwordField.SelectedText = "";
-            this.passwordField.Size = new System.Drawing.Size(149, 32);
+            this.passwordField.Size = new System.Drawing.Size(199, 39);
             this.passwordField.TabIndex = 28;
             this.passwordField.Visible = false;
             this.passwordField.TextChanged += new System.EventHandler(this.passwordField_TextChanged);
@@ -297,14 +283,14 @@ namespace SplashScreenLadera
             this.usernameField.IconLeft = ((System.Drawing.Image)(resources.GetObject("usernameField.IconLeft")));
             this.usernameField.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.usernameField.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.usernameField.Location = new System.Drawing.Point(86, 93);
-            this.usernameField.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.usernameField.Location = new System.Drawing.Point(56, 448);
+            this.usernameField.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.usernameField.Name = "usernameField";
             this.usernameField.PasswordChar = '\0';
             this.usernameField.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.usernameField.PlaceholderText = "";
             this.usernameField.SelectedText = "";
-            this.usernameField.Size = new System.Drawing.Size(149, 32);
+            this.usernameField.Size = new System.Drawing.Size(199, 39);
             this.usernameField.TabIndex = 23;
             this.usernameField.Visible = false;
             this.usernameField.TextChanged += new System.EventHandler(this.firstnameField_TextChanged);
@@ -329,26 +315,67 @@ namespace SplashScreenLadera
             this.idField.IconLeft = ((System.Drawing.Image)(resources.GetObject("idField.IconLeft")));
             this.idField.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.idField.IconLeftSize = new System.Drawing.Size(17, 17);
-            this.idField.Location = new System.Drawing.Point(24, 12);
-            this.idField.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.idField.Location = new System.Drawing.Point(56, 379);
+            this.idField.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.idField.Name = "idField";
             this.idField.PasswordChar = '\0';
             this.idField.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.idField.PlaceholderText = "";
             this.idField.SelectedText = "";
-            this.idField.Size = new System.Drawing.Size(30, 25);
+            this.idField.Size = new System.Drawing.Size(40, 31);
             this.idField.TabIndex = 25;
             this.idField.Visible = false;
             this.idField.TextChanged += new System.EventHandler(this.idField_TextChanged);
             // 
+            // updateButton
+            // 
+            this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updateButton.BackColor = System.Drawing.Color.Transparent;
+            this.updateButton.BorderRadius = 10;
+            this.updateButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.updateButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.updateButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.updateButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.updateButton.FillColor = System.Drawing.Color.Maroon;
+            this.updateButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateButton.ForeColor = System.Drawing.Color.White;
+            this.updateButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
+            this.updateButton.Location = new System.Drawing.Point(323, 483);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.PressedColor = System.Drawing.Color.Transparent;
+            this.updateButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
+            this.updateButton.ShadowDecoration.Enabled = true;
+            this.updateButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.updateButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
+            this.updateButton.Size = new System.Drawing.Size(175, 47);
+            this.updateButton.TabIndex = 39;
+            this.updateButton.Text = "Update Status";
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // usersTable
+            // 
+            this.usersTable.DataSetName = "usersTable";
+            this.usersTable.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableBindingSource
+            // 
+            this.usersTableBindingSource.DataMember = "usersTable";
+            this.usersTableBindingSource.DataSource = this.usersTable;
+            // 
+            // usersTableTableAdapter
+            // 
+            this.usersTableTableAdapter.ClearBeforeFill = true;
+            // 
             // AccountManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(626, 473);
+            this.ClientSize = new System.Drawing.Size(835, 582);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.viewButton);
@@ -360,10 +387,11 @@ namespace SplashScreenLadera
             this.Controls.Add(this.usernameField);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AccountManagement";
             this.Text = "AccountManagement";
             this.Load += new System.EventHandler(this.AccountManagement_Load);
+            this.Click += new System.EventHandler(this.AccountManagement_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersTableBindingSource)).EndInit();
@@ -385,5 +413,6 @@ namespace SplashScreenLadera
         private Guna.UI2.WinForms.Guna2TextBox passwordField;
         private Guna.UI2.WinForms.Guna2TextBox usernameField;
         private Guna.UI2.WinForms.Guna2TextBox idField;
+        private Guna.UI2.WinForms.Guna2Button updateButton;
     }
 }

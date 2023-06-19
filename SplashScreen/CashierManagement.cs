@@ -75,7 +75,7 @@ namespace SplashScreen
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -198,9 +198,9 @@ namespace SplashScreen
                 firstName.Text = " ";
                 lastName.Text = " ";
                 contactNum.Text = "";
-                birthday.Text = " ";    
-                dateHired.Text = " ";   
-                salary.Text = " ";  
+                birthday.Text = " ";
+                dateHired.Text = " ";
+                salary.Text = " ";
                 populate();
             }
         }
@@ -222,14 +222,14 @@ namespace SplashScreen
 
                 if (dataSet.Tables[0].Rows.Count != 0)
                 {
-                    
-                        if (MessageBox.Show("Do you want to delete this Cashier?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            SqlCommand cmd = new SqlCommand("delete from cashierTable where cashier_id='" + cashierId.Text + "'", dbCon.getConnection());
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Cashier deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    
+
+                    if (MessageBox.Show("Do you want to delete this Cashier?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        SqlCommand cmd = new SqlCommand("delete from cashierTable where cashier_id='" + cashierId.Text + "'", dbCon.getConnection());
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Cashier deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 dbCon.closeConnection();
                 firstName.Text = " ";
@@ -314,6 +314,65 @@ namespace SplashScreen
 
         private void label6_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void contactNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+        }
+
+        private void salary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit, decimal point, or control key
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // Ignore the keypress
+                return;
+            }
+
+            // Check if a decimal point already exists
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true; // Ignore the keypress
+                return;
+            }
+
+            // Check if the input would result in more than two decimal places
+            if (e.KeyChar != '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                int decimalPosition = ((TextBox)sender).Text.IndexOf(".");
+                if (((TextBox)sender).Text.Substring(decimalPosition).Length >= 3)
+                {
+                    e.Handled = true; // Ignore the keypress
+                    return;
+                }
+            }
+        }
+
+        private void firstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void firstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
+
+        }
+
+        private void lastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
+            }
 
         }
     }
