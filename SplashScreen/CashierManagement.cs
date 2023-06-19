@@ -33,8 +33,29 @@ namespace SplashScreen
                 var dataSet = new DataSet();
                 sda.Fill(dataSet);
 
-                dataGridview.DataSource = dataSet.Tables[0];
+                DataTable dataTable = dataSet.Tables[0];
+                dataTable.Columns.Add("No", typeof(int));
 
+                //add counter 
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    dataTable.Rows[i]["No"] = i + 1;
+                }
+
+                dataGridview.DataSource = dataTable;
+
+                dataGridview.Columns["No"].DisplayIndex = 0;
+                dataGridview.Columns["user_id"].Visible = false;
+                dataGridview.Columns["cashier_id"].Visible = false;
+
+                //rename header
+                dataGridview.Columns[0].HeaderText = "No";
+                dataGridview.Columns[1].HeaderText = "First Name";
+                dataGridview.Columns[2].HeaderText = "Last Name";
+                dataGridview.Columns[3].HeaderText = "Contact No.";
+                dataGridview.Columns[4].HeaderText = "Birthday";
+                dataGridview.Columns[5].HeaderText = "Date Hired";
+                dataGridview.Columns[6].HeaderText = "Salary";
 
                 dbCon.closeConnection();
 
@@ -62,27 +83,74 @@ namespace SplashScreen
             this.Close();
         }
 
+        //random password generator
+        private static Random random = new Random();
+
+        private static string GeneratePassword(int length)
+        {
+            const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=<>?";
+
+            char[] password = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                password[i] = validChars[random.Next(validChars.Length)];
+            }
+
+            return new string(password);
+        }
+
+
         private void insertButton_Click(object sender, EventArgs e)
         {
+
             try
             {
-                dbCon.openConnection();
-                string query = "insert into cashierTable values('" + firstName.Text + "', '" + lastName.Text + "', 'dummyusername', 'dummypass', '" + contactNum.Text + "', '" + birthday.Text + "', '" + dateHired.Text + "', '" + salary.Text + "', 'Active')";
-                SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+                if (firstName.Text == string.Empty || lastName.Text == string.Empty || contactNum.Text == string.Empty || birthday.Text == string.Empty || dateHired.Text == string.Empty || salary.Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill out all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    string password = GeneratePassword(8);
+                    dbCon.openConnection();
+                    //insert cashier account in userTable
+                    string query1 = "insert into usersTable values('" + firstName.Text + "', '" + password + "', 'Cashier', 'Active')";
+                    SqlCommand cmd1 = new SqlCommand(query1, dbCon.getConnection());
 
-                cmd.ExecuteNonQuery();
+                    cmd1.ExecuteNonQuery();
 
-                MessageBox.Show("Cashier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int userId = 0;
 
-                dbCon.closeConnection();
-                populate();
+                    //select the user_id of new cashier
+                    string query2 = "select user_id from usersTable where username = '" + firstName.Text + "' ";
+                    SqlCommand cmd2 = new SqlCommand(query2, dbCon.getConnection());
 
-                firstName.Text = "";
-                lastName.Text = "";
-                contactNum.Text = "";
-                birthday.Text = "";
-                dateHired.Text = "";
-                salary.Text = "";
+                    using (SqlDataReader reader = cmd2.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            userId = reader.GetInt32(0);
+                        }
+                    }
+
+                    //insert the cashier information and user_id
+                    string query3 = "insert into cashierTable values('" + firstName.Text + "', '" + lastName.Text + "', '" + contactNum.Text + "', '" + birthday.Text + "', '" + dateHired.Text + "', '" + salary.Text + "', '" + userId + "')";
+                    SqlCommand cmd3 = new SqlCommand(query3, dbCon.getConnection());
+
+                    cmd3.ExecuteNonQuery();
+
+                    MessageBox.Show("Cashier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dbCon.closeConnection();
+                    populate();
+
+                    firstName.Text = "";
+                    lastName.Text = "";
+                    contactNum.Text = "";
+                    birthday.Text = "";
+                    dateHired.Text = "";
+                    salary.Text = "";
+                }
             }
             catch (Exception ex)
             {
@@ -192,12 +260,46 @@ namespace SplashScreen
         }
         public void searchCashier(String searchValue)
         {
-            dbCon.openConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("select cashier_id, first_name, last_name, username, contact_no, birthday, date_hired, salary from cashierTable where concat(cashier_id, first_name, last_name, username, contact_no, birthday, date_hired, salary) LIKE '%" + searchBox.Text + "%'", dbCon.getConnection());
-            DataTable newDataTable = new DataTable();
-            adapter.Fill(newDataTable);
-            dataGridview.DataSource = newDataTable;
-            dbCon.closeConnection();
+            try
+            {
+                dbCon.openConnection();
+                string query = "select * from cashierTable where concat(first_name, last_name, contact_no, birthday, date_hired, salary) like '%" + searchBox.Text + "%'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, dbCon.getConnection());
+                SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(sda);
+                var dataSet = new DataSet();
+                sda.Fill(dataSet);
+
+                DataTable dataTable = dataSet.Tables[0];
+                dataTable.Columns.Add("No", typeof(int));
+
+                //add counter 
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    dataTable.Rows[i]["No"] = i + 1;
+                }
+
+                dataGridview.DataSource = dataTable;
+
+                dataGridview.Columns["No"].DisplayIndex = 0;
+                dataGridview.Columns["user_id"].Visible = false;
+                dataGridview.Columns["cashier_id"].Visible = false;
+
+                //rename header
+                dataGridview.Columns[0].HeaderText = "No";
+                dataGridview.Columns[1].HeaderText = "First Name";
+                dataGridview.Columns[2].HeaderText = "Last Name";
+                dataGridview.Columns[3].HeaderText = "Contact No.";
+                dataGridview.Columns[4].HeaderText = "Birthday";
+                dataGridview.Columns[5].HeaderText = "Date Hired";
+                dataGridview.Columns[6].HeaderText = "Salary";
+
+                dbCon.closeConnection();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
