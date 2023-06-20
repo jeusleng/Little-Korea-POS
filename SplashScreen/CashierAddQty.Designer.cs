@@ -37,21 +37,22 @@
             // guna2TextBox1
             // 
             this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "Add Qty";
+            this.guna2TextBox1.DefaultText = "Add Quantity";
             this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.FillColor = System.Drawing.SystemColors.Control;
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(144, 44);
+            this.guna2TextBox1.Location = new System.Drawing.Point(192, 54);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
+            this.guna2TextBox1.Size = new System.Drawing.Size(267, 44);
             this.guna2TextBox1.TabIndex = 0;
             this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -59,11 +60,13 @@
             // 
             this.productQtyField.BackColor = System.Drawing.Color.Transparent;
             this.productQtyField.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.productQtyField.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.productQtyField.Location = new System.Drawing.Point(160, 145);
+            this.productQtyField.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productQtyField.Location = new System.Drawing.Point(213, 178);
+            this.productQtyField.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.productQtyField.Name = "productQtyField";
-            this.productQtyField.Size = new System.Drawing.Size(184, 36);
+            this.productQtyField.Size = new System.Drawing.Size(245, 44);
             this.productQtyField.TabIndex = 1;
+            this.productQtyField.UpDownButtonFillColor = System.Drawing.Color.Maroon;
             // 
             // addqtyButton
             // 
@@ -78,28 +81,29 @@
             this.addqtyButton.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addqtyButton.ForeColor = System.Drawing.Color.White;
             this.addqtyButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.addqtyButton.Location = new System.Drawing.Point(183, 208);
-            this.addqtyButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addqtyButton.Location = new System.Drawing.Point(244, 256);
+            this.addqtyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addqtyButton.Name = "addqtyButton";
             this.addqtyButton.PressedColor = System.Drawing.Color.Transparent;
             this.addqtyButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.addqtyButton.ShadowDecoration.Enabled = true;
             this.addqtyButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.addqtyButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.addqtyButton.Size = new System.Drawing.Size(131, 38);
+            this.addqtyButton.Size = new System.Drawing.Size(175, 47);
             this.addqtyButton.TabIndex = 65;
             this.addqtyButton.Text = "Enter";
             this.addqtyButton.Click += new System.EventHandler(this.addqtyButton_Click);
             // 
             // CashierAddQty
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 291);
+            this.ClientSize = new System.Drawing.Size(649, 358);
             this.Controls.Add(this.addqtyButton);
             this.Controls.Add(this.productQtyField);
             this.Controls.Add(this.guna2TextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CashierAddQty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CashierAddQty";
