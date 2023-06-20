@@ -328,7 +328,8 @@ namespace SplashScreenLadera
                     SqlCommand cmd4 = new SqlCommand(query4, dbCon.getConnection());
                     cmd4.ExecuteNonQuery();
 
-
+                    SqlCommand cmd5 = new SqlCommand("UPDATE productsTable SET stock = stock - '" + product_qty + "' WHERE product_id = '" + product_id + "'", dbCon.getConnection());
+                    cmd5.ExecuteNonQuery();
                 }
 
              
