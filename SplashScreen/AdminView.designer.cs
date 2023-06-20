@@ -52,9 +52,9 @@
             this.roleLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -65,8 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelLogo.SuspendLayout();
             this.panelChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -182,12 +182,13 @@
             this.dbBtn.Location = new System.Drawing.Point(0, 579);
             this.dbBtn.Name = "dbBtn";
             this.dbBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.dbBtn.Size = new System.Drawing.Size(257, 45);
+            this.dbBtn.Size = new System.Drawing.Size(261, 45);
             this.dbBtn.TabIndex = 11;
             this.dbBtn.Text = "  Database Backup";
             this.dbBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dbBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dbBtn.UseVisualStyleBackColor = true;
+            this.dbBtn.Click += new System.EventHandler(this.dbBtn_Click);
             // 
             // ordersBtn
             // 
@@ -202,12 +203,13 @@
             this.ordersBtn.Location = new System.Drawing.Point(0, 534);
             this.ordersBtn.Name = "ordersBtn";
             this.ordersBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.ordersBtn.Size = new System.Drawing.Size(257, 45);
+            this.ordersBtn.Size = new System.Drawing.Size(261, 45);
             this.ordersBtn.TabIndex = 10;
             this.ordersBtn.Text = "  Orders";
             this.ordersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ordersBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ordersBtn.UseVisualStyleBackColor = true;
+            this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
             // 
             // exitBtn
             // 
@@ -222,7 +224,7 @@
             this.exitBtn.Location = new System.Drawing.Point(0, 624);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.exitBtn.Size = new System.Drawing.Size(257, 121);
+            this.exitBtn.Size = new System.Drawing.Size(261, 121);
             this.exitBtn.TabIndex = 9;
             this.exitBtn.Text = "  Logout";
             this.exitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,7 +245,7 @@
             this.cashierBtn.Location = new System.Drawing.Point(0, 489);
             this.cashierBtn.Name = "cashierBtn";
             this.cashierBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.cashierBtn.Size = new System.Drawing.Size(257, 45);
+            this.cashierBtn.Size = new System.Drawing.Size(261, 45);
             this.cashierBtn.TabIndex = 8;
             this.cashierBtn.Text = "  Cashier Management";
             this.cashierBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,7 +266,7 @@
             this.catBtn.Location = new System.Drawing.Point(0, 444);
             this.catBtn.Name = "catBtn";
             this.catBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.catBtn.Size = new System.Drawing.Size(257, 45);
+            this.catBtn.Size = new System.Drawing.Size(261, 45);
             this.catBtn.TabIndex = 6;
             this.catBtn.Text = "  Category Management";
             this.catBtn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -285,7 +287,7 @@
             this.productsBtn.Location = new System.Drawing.Point(0, 399);
             this.productsBtn.Name = "productsBtn";
             this.productsBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.productsBtn.Size = new System.Drawing.Size(257, 45);
+            this.productsBtn.Size = new System.Drawing.Size(261, 45);
             this.productsBtn.TabIndex = 5;
             this.productsBtn.Text = "  Products Management";
             this.productsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,7 +308,7 @@
             this.acctBtn.Location = new System.Drawing.Point(0, 354);
             this.acctBtn.Name = "acctBtn";
             this.acctBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.acctBtn.Size = new System.Drawing.Size(257, 45);
+            this.acctBtn.Size = new System.Drawing.Size(261, 45);
             this.acctBtn.TabIndex = 3;
             this.acctBtn.Text = "  Account Management";
             this.acctBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -327,7 +329,7 @@
             this.dashBtn.Location = new System.Drawing.Point(0, 315);
             this.dashBtn.Name = "dashBtn";
             this.dashBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.dashBtn.Size = new System.Drawing.Size(257, 39);
+            this.dashBtn.Size = new System.Drawing.Size(261, 39);
             this.dashBtn.TabIndex = 1;
             this.dashBtn.Text = "  Dashboard";
             this.dashBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +347,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(257, 315);
+            this.panelLogo.Size = new System.Drawing.Size(261, 315);
             this.panelLogo.TabIndex = 0;
             // 
             // label1
@@ -356,7 +358,7 @@
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
             this.label1.Location = new System.Drawing.Point(23, 193);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.Size = new System.Drawing.Size(82, 19);
             this.label1.TabIndex = 14;
             this.label1.Text = "Current Time:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -369,7 +371,7 @@
             this.currentTimeDisplay.ForeColor = System.Drawing.Color.Firebrick;
             this.currentTimeDisplay.Location = new System.Drawing.Point(15, 212);
             this.currentTimeDisplay.Name = "currentTimeDisplay";
-            this.currentTimeDisplay.Size = new System.Drawing.Size(278, 70);
+            this.currentTimeDisplay.Size = new System.Drawing.Size(223, 56);
             this.currentTimeDisplay.TabIndex = 13;
             this.currentTimeDisplay.Text = "currenttime";
             this.currentTimeDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -381,9 +383,9 @@
             this.roleLabel.BackColor = System.Drawing.Color.Transparent;
             this.roleLabel.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.roleLabel.Location = new System.Drawing.Point(135, 104);
+            this.roleLabel.Location = new System.Drawing.Point(137, 104);
             this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(41, 26);
+            this.roleLabel.Size = new System.Drawing.Size(32, 22);
             this.roleLabel.TabIndex = 12;
             this.roleLabel.Text = "role";
             this.roleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -395,9 +397,9 @@
             this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.usernameLabel.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.usernameLabel.Location = new System.Drawing.Point(126, 68);
+            this.usernameLabel.Location = new System.Drawing.Point(128, 68);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(144, 42);
+            this.usernameLabel.Size = new System.Drawing.Size(121, 34);
             this.usernameLabel.TabIndex = 11;
             this.usernameLabel.Text = "username";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -417,6 +419,17 @@
             this.panelChildForm.TabIndex = 2;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(56, 64);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(715, 498);
+            this.pictureBox9.TabIndex = 1;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -431,19 +444,9 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(56, 64);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(715, 498);
-            this.pictureBox9.TabIndex = 1;
-            this.pictureBox9.TabStop = false;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -469,8 +472,8 @@
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelChildForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -154,5 +154,20 @@ namespace SplashScreen
         {
 
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ordersBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OrderManagement());
+        }
+
+        private void dbBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BackupManagement());
+        }
     }
 }
