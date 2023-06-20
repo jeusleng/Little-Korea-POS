@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -66,6 +67,7 @@
             this.datetime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.productGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temptransactionGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQty)).BeginInit();
@@ -752,6 +754,7 @@
             this.label1.TabIndex = 81;
             this.label1.Text = "Logout";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -774,7 +777,7 @@
             this.datetime.BackColor = System.Drawing.Color.Transparent;
             this.datetime.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime.ForeColor = System.Drawing.Color.Maroon;
-            this.datetime.Location = new System.Drawing.Point(834, 25);
+            this.datetime.Location = new System.Drawing.Point(790, 25);
             this.datetime.Name = "datetime";
             this.datetime.Size = new System.Drawing.Size(154, 49);
             this.datetime.TabIndex = 83;
@@ -808,6 +811,10 @@
             this.label5.TabIndex = 85;
             this.label5.Text = "Line Item(s)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // CashierScreen
             // 
@@ -895,5 +902,6 @@
         private System.Windows.Forms.Label datetime;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -28,6 +28,10 @@ namespace SplashScreenLadera
             populateProduct();
             populateTempTransaction();
 
+            Timer timer1 = new Timer();
+            timer1.Interval = 1000; // 1 second
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Start();
         }
 
         Connection dbCon = new Connection();
@@ -108,6 +112,14 @@ namespace SplashScreenLadera
                 temptransactionGridview.Columns["temp_id"].Visible = false;
                 temptransactionGridview.Columns["user_id"].Visible = false;
                 temptransactionGridview.Columns["product_id"].Visible = false;
+
+                //rename header
+                temptransactionGridview.Columns[0].HeaderText = "No";
+                temptransactionGridview.Columns[1].HeaderText = "Name";
+                temptransactionGridview.Columns[2].HeaderText = "Price";
+                temptransactionGridview.Columns[3].HeaderText = "Quantity";
+                temptransactionGridview.Columns[4].HeaderText = "Total Price";
+
 
                 dbCon.closeConnection();
 
@@ -359,6 +371,16 @@ namespace SplashScreenLadera
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            datetime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
