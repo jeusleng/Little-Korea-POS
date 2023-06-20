@@ -164,5 +164,10 @@ namespace SplashScreen
         {
             openChildForm(new OrderManagement());
         }
+
+        private void dbBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BackupManagement());
+        }
     }
 }

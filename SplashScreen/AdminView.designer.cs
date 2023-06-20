@@ -188,6 +188,7 @@
             this.dbBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dbBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dbBtn.UseVisualStyleBackColor = true;
+            this.dbBtn.Click += new System.EventHandler(this.dbBtn_Click);
             // 
             // ordersBtn
             // 
