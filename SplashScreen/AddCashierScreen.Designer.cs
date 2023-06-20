@@ -233,7 +233,7 @@ namespace SplashScreenLadera
             this.fnameField.Size = new System.Drawing.Size(199, 39);
             this.fnameField.TabIndex = 94;
             this.fnameField.TextChanged += new System.EventHandler(this.fnameField_TextChanged);
-            this.fnameField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fnameField_KeyPress);
+            this.fnameField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fnameField_KeyPress_1);
             // 
             // closeButton
             // 

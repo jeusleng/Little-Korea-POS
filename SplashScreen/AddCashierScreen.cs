@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using SplashScreenLadera;
 using Guna.UI2.WinForms;
+using System.Globalization;
 
 namespace SplashScreenLadera
 {
@@ -62,7 +63,7 @@ namespace SplashScreenLadera
                 }
 
                 decimal salary;
-                if (decimal.TryParse(salaryAmountField.Text, out salary))
+                if (decimal.TryParse(salaryAmountField.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out salary))
                 {
                     // Insert the cashier information and user_id in the cashierTable
                     string query3 = "INSERT INTO cashierTable (first_name, last_name, contact_no, birthday, date_hired, salary, user_id) " +
@@ -84,6 +85,7 @@ namespace SplashScreenLadera
                 {
                     MessageBox.Show("Invalid salary value. Please enter a valid decimal number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
 
 
             }
@@ -162,7 +164,6 @@ namespace SplashScreenLadera
             {
                 e.Handled = true; // Cancels the keypress event
             }
-
         }
 
         private void lnameField_KeyPress(object sender, KeyPressEventArgs e)
@@ -171,7 +172,6 @@ namespace SplashScreenLadera
             {
                 e.Handled = true; // Cancels the keypress event
             }
-
         }
 
         private void contactNumField_KeyPress(object sender, KeyPressEventArgs e)
@@ -194,6 +194,14 @@ namespace SplashScreenLadera
             if (e.KeyChar == '.' && ((Guna2TextBox)sender).Text.Contains("."))
             {
                 e.Handled = true; // Ignore the key press
+            }
+        }
+
+        private void fnameField_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancels the keypress event
             }
         }
     }

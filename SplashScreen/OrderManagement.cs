@@ -23,6 +23,8 @@ namespace SplashScreenLadera
         private void OrderManagement_Load(object sender, EventArgs e)
         {
             populate();
+            dataGridview.DefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
+            dataGridview.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 9, FontStyle.Regular);
         }
 
         private void populate()
@@ -81,7 +83,7 @@ namespace SplashScreenLadera
             {
                 if(transactionId.Text == string.Empty || transactionDate.Text == string.Empty || cashierName.Text == string.Empty)
                 {
-                    MessageBox.Show("Pleaseselect a transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please select a transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 else
