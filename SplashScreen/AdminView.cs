@@ -28,7 +28,7 @@ namespace SplashScreen
 
         private void btnMedia_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form2());
+            openChildForm(new AdminDashboard());
         }
 
        
