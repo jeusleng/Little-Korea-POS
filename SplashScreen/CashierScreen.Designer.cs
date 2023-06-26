@@ -68,6 +68,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.prodQtyLabel = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.productGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temptransactionGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQty)).BeginInit();
@@ -353,7 +354,7 @@
             this.addButton.ForeColor = System.Drawing.Color.White;
             this.addButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.addButton.Location = new System.Drawing.Point(150, 480);
-            this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addButton.Margin = new System.Windows.Forms.Padding(2);
             this.addButton.Name = "addButton";
             this.addButton.PressedColor = System.Drawing.Color.Transparent;
             this.addButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
@@ -380,7 +381,7 @@
             this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.cancelButton.Location = new System.Drawing.Point(436, 596);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.PressedColor = System.Drawing.Color.Transparent;
             this.cancelButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
@@ -407,7 +408,7 @@
             this.paymentButton.ForeColor = System.Drawing.Color.White;
             this.paymentButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.paymentButton.Location = new System.Drawing.Point(508, 511);
-            this.paymentButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paymentButton.Margin = new System.Windows.Forms.Padding(2);
             this.paymentButton.Name = "paymentButton";
             this.paymentButton.PressedColor = System.Drawing.Color.Transparent;
             this.paymentButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
@@ -434,7 +435,7 @@
             this.addqtyButton.ForeColor = System.Drawing.Color.White;
             this.addqtyButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.addqtyButton.Location = new System.Drawing.Point(436, 553);
-            this.addqtyButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addqtyButton.Margin = new System.Windows.Forms.Padding(2);
             this.addqtyButton.Name = "addqtyButton";
             this.addqtyButton.PressedColor = System.Drawing.Color.Transparent;
             this.addqtyButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
@@ -461,7 +462,7 @@
             this.voidButton.ForeColor = System.Drawing.Color.White;
             this.voidButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.voidButton.Location = new System.Drawing.Point(577, 553);
-            this.voidButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.voidButton.Margin = new System.Windows.Forms.Padding(2);
             this.voidButton.Name = "voidButton";
             this.voidButton.PressedColor = System.Drawing.Color.Transparent;
             this.voidButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
@@ -489,7 +490,7 @@
             this.newtransButton.ForeColor = System.Drawing.Color.White;
             this.newtransButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.newtransButton.Location = new System.Drawing.Point(577, 596);
-            this.newtransButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newtransButton.Margin = new System.Windows.Forms.Padding(2);
             this.newtransButton.Name = "newtransButton";
             this.newtransButton.PressedColor = System.Drawing.Color.Transparent;
             this.newtransButton.ShadowDecoration.Color = System.Drawing.Color.Transparent;
@@ -832,6 +833,26 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // prodQtyLabel
+            // 
+            this.prodQtyLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.prodQtyLabel.DefaultText = "";
+            this.prodQtyLabel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.prodQtyLabel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.prodQtyLabel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.prodQtyLabel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.prodQtyLabel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.prodQtyLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.prodQtyLabel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.prodQtyLabel.Location = new System.Drawing.Point(107, 581);
+            this.prodQtyLabel.Name = "prodQtyLabel";
+            this.prodQtyLabel.PasswordChar = '\0';
+            this.prodQtyLabel.PlaceholderText = "";
+            this.prodQtyLabel.SelectedText = "";
+            this.prodQtyLabel.Size = new System.Drawing.Size(20, 36);
+            this.prodQtyLabel.TabIndex = 86;
+            this.prodQtyLabel.Visible = false;
+            // 
             // CashierScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -840,6 +861,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(761, 659);
+            this.Controls.Add(this.prodQtyLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.datetime);
@@ -918,5 +940,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2TextBox prodQtyLabel;
     }
 }

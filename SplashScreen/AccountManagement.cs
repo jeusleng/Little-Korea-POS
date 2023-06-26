@@ -41,13 +41,20 @@ namespace SplashScreenLadera
             try
             {
                 dbCon.openConnection();
-                string query = "select * from usersTable";
+                string query = "select * from usersTable where role = 'Cashier'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, dbCon.getConnection());
                 SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(sda);
                 var dataSet = new DataSet();
                 sda.Fill(dataSet);
 
                 DataTable dataTable = dataSet.Tables[0];
+                dataTable.Columns.Add("No", typeof(int));
+
+                //add counter 
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    dataTable.Rows[i]["No"] = i + 1;
+                }
 
                 var statusColumn = new DataGridViewComboBoxColumn();
 
@@ -58,9 +65,12 @@ namespace SplashScreenLadera
 
                 dataGridview.DataSource = dataTable;
                 dataGridview.Columns.Add(statusColumn);
+                dataGridview.Columns["No"].DisplayIndex = 0;
+                dataGridview.Columns["user_id"].Visible = false;
+                dataGridview.Columns["status"].Visible = false;
+
 
                 // Customize header titles
-                dataGridview.Columns["user_id"].HeaderText = "No";
                 dataGridview.Columns["username"].HeaderText = "Username";
                 dataGridview.Columns["password"].HeaderText = "Password";
                 dataGridview.Columns["role"].HeaderText = "Role";

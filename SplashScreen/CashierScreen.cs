@@ -115,10 +115,10 @@ namespace SplashScreenLadera
 
                 //rename header
                 temptransactionGridview.Columns[0].HeaderText = "No";
-                temptransactionGridview.Columns[1].HeaderText = "Name";
-                temptransactionGridview.Columns[2].HeaderText = "Price";
-                temptransactionGridview.Columns[3].HeaderText = "Quantity";
-                temptransactionGridview.Columns[4].HeaderText = "Total Price";
+                temptransactionGridview.Columns[3].HeaderText = "Name";
+                temptransactionGridview.Columns[4].HeaderText = "Price";
+                temptransactionGridview.Columns[5].HeaderText = "Quantity";
+                temptransactionGridview.Columns[6].HeaderText = "Total Price";
 
 
                 dbCon.closeConnection();
@@ -139,6 +139,7 @@ namespace SplashScreenLadera
                 productId.Text = rows.Cells["product_id"].Value.ToString();
                 productName.Text = rows.Cells["product_name"].Value.ToString();
                 productPrice.Text = rows.Cells["product_price"].Value.ToString();
+                prodQtyLabel.Text = rows.Cells["stock"].Value.ToString();
             }
         }
 
@@ -161,21 +162,29 @@ namespace SplashScreenLadera
                 }
                 else
                 {
-                    dbCon.openConnection();
-                    string query = "insert into tempTransactionTable values('"+ userId +"', '"+ productId.Text +"', '"+ productName.Text +"', '"+ productPrice.Text +"', '"+ productQty.Text +"')";
-                    SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
+                    if(Convert.ToInt32(productQty.Text) > Convert.ToInt32(prodQtyLabel.Text))
+                    {
+                        MessageBox.Show("Error: insufficient quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        dbCon.openConnection();
+                        string query = "insert into tempTransactionTable values('" + userId + "', '" + productId.Text + "', '" + productName.Text + "', '" + productPrice.Text + "', '" + productQty.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, dbCon.getConnection());
 
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    dbCon.closeConnection();
-                    populateTempTransaction();
+                        dbCon.closeConnection();
+                        populateTempTransaction();
 
-                    productId.Text = "";
-                    productName.Text = "";
-                    productPrice.Text = "";
-                    productQty.Text = "";
+                        productId.Text = "";
+                        productName.Text = "";
+                        productPrice.Text = "";
+                        productQty.Text = "";
+                    }
+                   
                 }
             }catch (Exception ex)
             {

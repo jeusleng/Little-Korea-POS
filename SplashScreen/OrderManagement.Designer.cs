@@ -36,6 +36,7 @@
             this.cashierName = new Guna.UI2.WinForms.Guna2TextBox();
             this.transactionDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.viewDetailsButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,13 +66,13 @@
             this.dataGridview.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.dataGridview.Location = new System.Drawing.Point(53, 55);
+            this.dataGridview.Location = new System.Drawing.Point(20, 72);
             this.dataGridview.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridview.Name = "dataGridview";
             this.dataGridview.RowHeadersVisible = false;
             this.dataGridview.RowHeadersWidth = 51;
             this.dataGridview.RowTemplate.Height = 24;
-            this.dataGridview.Size = new System.Drawing.Size(499, 286);
+            this.dataGridview.Size = new System.Drawing.Size(579, 286);
             this.dataGridview.TabIndex = 36;
             this.dataGridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Alizarin;
             this.dataGridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -203,7 +204,7 @@
             this.viewDetailsButton.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewDetailsButton.ForeColor = System.Drawing.Color.White;
             this.viewDetailsButton.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.viewDetailsButton.Location = new System.Drawing.Point(234, 361);
+            this.viewDetailsButton.Location = new System.Drawing.Point(234, 378);
             this.viewDetailsButton.Margin = new System.Windows.Forms.Padding(2);
             this.viewDetailsButton.Name = "viewDetailsButton";
             this.viewDetailsButton.PressedColor = System.Drawing.Color.Transparent;
@@ -216,11 +217,25 @@
             this.viewDetailsButton.Text = "View";
             this.viewDetailsButton.Click += new System.EventHandler(this.viewDetailsButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(139, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(351, 56);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Transaction Details";
+            // 
             // OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 434);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.viewDetailsButton);
             this.Controls.Add(this.transactionDate);
             this.Controls.Add(this.cashierName);
@@ -232,6 +247,7 @@
             this.Load += new System.EventHandler(this.OrderManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridview)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -242,5 +258,6 @@
         private Guna.UI2.WinForms.Guna2TextBox cashierName;
         private Guna.UI2.WinForms.Guna2TextBox transactionDate;
         private Guna.UI2.WinForms.Guna2Button viewDetailsButton;
+        private System.Windows.Forms.Label label1;
     }
 }

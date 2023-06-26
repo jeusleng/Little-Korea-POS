@@ -47,6 +47,17 @@ namespace SplashScreenLadera
             }
 
             dataGridview.DataSource = dataTable;
+
+            dataGridview.Columns["transaction_id"].Visible = false;
+            dataGridview.Columns["transaction_details_id"].Visible = false;
+
+            // Customize header titles
+            dataGridview.Columns["product_id"].HeaderText = "Product ID";
+            dataGridview.Columns["quantity"].HeaderText = "Quantity";
+            dataGridview.Columns["price"].HeaderText = "Price";
+            dataGridview.Columns["total_price"].HeaderText = "Total Price";
+
+
             dbCon.closeConnection();
         }
 

@@ -205,7 +205,7 @@
             this.ordersBtn.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.ordersBtn.Size = new System.Drawing.Size(261, 45);
             this.ordersBtn.TabIndex = 10;
-            this.ordersBtn.Text = "  Orders";
+            this.ordersBtn.Text = "Transaction Details";
             this.ordersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ordersBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ordersBtn.UseVisualStyleBackColor = true;
